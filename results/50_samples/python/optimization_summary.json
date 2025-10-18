@@ -1,0 +1,115 @@
+{
+  "best_config": {
+    "temp": 0.1,
+    "tokens": 56
+  },
+  "best_score": 0.8143669190525716,
+  "best_metrics": {
+    "pass@1": 0.26,
+    "edit_similarity": 0.6512614391013094,
+    "exact_match": 0.26,
+    "balanced_score": 0.8143669190525716,
+    "total_samples": 50,
+    "passes": 13,
+    "temperature": 0.1,
+    "max_tokens": 56
+  },
+  "all_evaluations": [
+    {
+      "config": {
+        "temp": 0.05,
+        "tokens": 56
+      },
+      "metrics": {
+        "pass@1": 0.26,
+        "edit_similarity": 0.6235700206713931,
+        "exact_match": 0.26,
+        "balanced_score": 0.80118052932404,
+        "total_samples": 50,
+        "passes": 13,
+        "temperature": 0.05,
+        "max_tokens": 56
+      }
+    },
+    {
+      "config": {
+        "temp": 0.08,
+        "tokens": 56
+      },
+      "metrics": {
+        "pass@1": 0.26,
+        "edit_similarity": 0.6234198962533926,
+        "exact_match": 0.26,
+        "balanced_score": 0.8011090415059446,
+        "total_samples": 50,
+        "passes": 13,
+        "temperature": 0.08,
+        "max_tokens": 56
+      }
+    },
+    {
+      "config": {
+        "temp": 0.1,
+        "tokens": 56
+      },
+      "metrics": {
+        "pass@1": 0.26,
+        "edit_similarity": 0.6512614391013094,
+        "exact_match": 0.26,
+        "balanced_score": 0.8143669190525716,
+        "total_samples": 50,
+        "passes": 13,
+        "temperature": 0.1,
+        "max_tokens": 56
+      }
+    },
+    {
+      "config": {
+        "temp": 0.1,
+        "tokens": 64
+      },
+      "metrics": {
+        "pass@1": 0.26,
+        "edit_similarity": 0.6344371094338583,
+        "exact_match": 0.26,
+        "balanced_score": 0.8063553334966426,
+        "total_samples": 50,
+        "passes": 13,
+        "temperature": 0.1,
+        "max_tokens": 64
+      }
+    },
+    {
+      "config": {
+        "temp": 0.12,
+        "tokens": 56
+      },
+      "metrics": {
+        "pass@1": 0.26,
+        "edit_similarity": 0.6303890174432004,
+        "exact_match": 0.26,
+        "balanced_score": 0.8044276706439483,
+        "total_samples": 50,
+        "passes": 13,
+        "temperature": 0.12,
+        "max_tokens": 56
+      }
+    },
+    {
+      "config": {
+        "temp": 0.15,
+        "tokens": 56
+      },
+      "metrics": {
+        "pass@1": 0.26,
+        "edit_similarity": 0.6358477148517845,
+        "exact_match": 0.26,
+        "balanced_score": 0.8070270503623216,
+        "total_samples": 50,
+        "passes": 13,
+        "temperature": 0.15,
+        "max_tokens": 56
+      }
+    }
+  ]
+}

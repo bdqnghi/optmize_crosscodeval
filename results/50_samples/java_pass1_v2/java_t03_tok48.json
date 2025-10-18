@@ -1,0 +1,414 @@
+{
+  "metrics": {
+    "pass@1": 0.28,
+    "edit_similarity": 0.711124058327286,
+    "exact_match": 0.28,
+    "balanced_score": 0.8816608069956774,
+    "total_samples": 50,
+    "passes": 14,
+    "temperature": 0.03,
+    "max_tokens": 48
+  },
+  "results": [
+    {
+      "index": 0,
+      "groundtruth": "int startAngle = ((Arc) object).getStartAngle();",
+      "prediction": "int startAngle = ((Arc) object).getStartAngle();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 1,
+      "groundtruth": "((Line) object).getColor());",
+      "prediction": "((Line) object).getColor());",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 2,
+      "groundtruth": "(Arc) object).getStopAngle();",
+      "prediction": "((Arc) object).getStopAngle());",
+      "es": 0.935483870967742,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 3,
+      "groundtruth": "server.blockUntilShutdown();",
+      "prediction": "System.out.print",
+      "es": 0.1785714285714286,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 4,
+      "groundtruth": "HttpClientUtil.sendGetRequest();",
+      "prediction": "logger.info(\"Receive message, message={}\", messageView.getMessag",
+      "es": 0.140625,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 5,
+      "groundtruth": "GreetingClient.start();",
+      "prediction": "",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 6,
+      "groundtruth": "RocketMqClients.CreatePushConsumer(messageView -> {",
+      "prediction": "RocketMqClients.consumeMess",
+      "es": 0.4901960784313726,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 7,
+      "groundtruth": "Producer producer = RocketMqClients.CreateProducer();",
+      "prediction": "Producer producer = RocketMqClients.createProducer(\"test-producer\");",
+      "es": 0.7647058823529411,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 8,
+      "groundtruth": "systemMessage.setContent(systemprompt);",
+      "prediction": "systemMessage.setCont",
+      "es": 0.5384615384615384,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 9,
+      "groundtruth": "\"Contador de tokens: %d\",gptService.getNumTokens());",
+      "prediction": "\"Tokens used: %d\", gptService.getTokensUsed());",
+      "es": 0.5576923076923077,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 10,
+      "groundtruth": "chatRequest.setMaxTokens(maxtokens);",
+      "prediction": "chatRequest.setMaxTokens(maxtokens);",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 11,
+      "groundtruth": "chatRequest.setModel(model);",
+      "prediction": "chatRequest.setM",
+      "es": 0.5714285714285714,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 12,
+      "groundtruth": "systemMessage.setRole(\"system\");",
+      "prediction": "systemMessage.setRole(\"system\");",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 13,
+      "groundtruth": "userMessage.setContent(this.presentation);",
+      "prediction": "userMessage.setContent(text;",
+      "es": 0.6428571428571428,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 14,
+      "groundtruth": "exampleMessage.setRole(role.toLowerCase());",
+      "prediction": "exampleMessage.setRole(role);",
+      "es": 0.6744186046511628,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 15,
+      "groundtruth": "AccUtils.printLogMsg(\"\u63d0\u53d6\u5230\u7684\u7b2c\u4e00\u4e2a\u6574\u6570\u662f\uff1a\" + i);",
+      "prediction": "AccUtils.printLogMsg(\"\u5728\u5b57\u7b26\u4e32\u4e2d\u627e\u5230\u6574\u6570\uff1a\" + i);",
+      "es": 0.8,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 16,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\u6253\u5f00\");",
+      "es": 0.9375,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 17,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5f00\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5361\");",
+      "es": 0.967741935483871,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 18,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6253\u5f00\u9489\u9489\");",
+      "prediction": "AccUtils.printLogMsg(\"\u6253\u5f00\u9489\u9489\");",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 19,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u6253\u5361\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u6253\u5361\");",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 20,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u6682\u65f6\u4e0d\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u4e0a\u73ed\u6253\u5361\");",
+      "es": 0.8709677419354839,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 21,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6807\u9898 => \" + videoDesc);",
+      "prediction": "if (videoDesc != null)",
+      "es": 0.16279069767441856,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 22,
+      "groundtruth": "AccUtils.printLogMsg(\"\u8fd4\u56de\u5230\u521d\u59cb\u72b6\u6001\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");",
+      "es": 0.78125,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 23,
+      "groundtruth": "AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));",
+      "prediction": "AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 24,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u597d\u7684\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u4e0a\u73ed\u6253\u5361\");",
+      "es": 0.8709677419354839,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 25,
+      "groundtruth": "dyTaskService.main();",
+      "prediction": "dyTaskService.main();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 26,
+      "groundtruth": "AccUtils.printLogMsg(\"\u5411\u4e0b\u6ed1\u52a8\");",
+      "prediction": "AccUtils.printLogMsg(\"swipe to next video\");",
+      "es": 0.5681818181818181,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 27,
+      "groundtruth": "= AccUtils.findElementListByContainText(\"\u6253\u5361\");",
+      "prediction": "= AccUtils.findAccessibilityNodeInfosByText(\"\u4e0a\u73ed\u6253\u5361\");",
+      "es": 0.5769230769230769,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 28,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6253\u5361\u5b8c\u6210\uff0c\u8fd4\u56de\u684c\u9762\");",
+      "prediction": "AccUtils.back();",
+      "es": 0.3529411764705882,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 29,
+      "groundtruth": "TinkerManager.setUpgradeRetryEnable(true);",
+      "prediction": "TinkerManager.setUpgradeRetryEnable(true);",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 30,
+      "groundtruth": "AccUtils.findElementByText(\"\u8003\u52e4\u6253\u5361\"));",
+      "prediction": "AccUtils.findElementByText(\"\u8003\u52e4\"));",
+      "es": 0.9444444444444444,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 31,
+      "groundtruth": "TinkerManager.installTinker(this);",
+      "prediction": "TinkerInstaller.onR",
+      "es": 0.4117647058823529,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 32,
+      "groundtruth": "= AccUtils.findElementByText(\"\u6211\u77e5\u9053\u4e86\");",
+      "prediction": "= AccUtils.findElementByText(\"\u4ee5\u540e\u518d\u8bf4\");",
+      "es": 0.8918918918918919,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 33,
+      "groundtruth": "element = AccUtils.findElementByText(\"\u4ee5\u540e\u518d\u8bf4\");",
+      "prediction": "element = AccUtils.findElementByText(\"\u8df3\u8fc7\");",
+      "es": 0.9111111111111111,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 34,
+      "groundtruth": "AccUtils.printLogMsg(\"open dy App\");",
+      "prediction": "AccUtils.timeSleep(waitTwoSecond);",
+      "es": 0.36111111111111116,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 35,
+      "groundtruth": "AccUtils.openApp(\"\u6296\u97f3\");",
+      "prediction": "AccUtils.timeSleep(waitTwoSecond);",
+      "es": 0.4117647058823529,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 36,
+      "groundtruth": "TinkerManager.setTinkerApplicationLike(this);",
+      "prediction": "// \u53ea\u6709\u8c03\u8bd5\u5e76\u4e14\u662fTinker\u5b89\u88c5\u7684\uff0c\u624d\u6253\u5370Tinker\u7684Log",
+      "es": 0.2222222222222222,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 37,
+      "groundtruth": "Utils.isBackground()) {",
+      "prediction": "!isTinkerInst",
+      "es": 0.26086956521739135,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 38,
+      "groundtruth": "AccUtils.printLogMsg(\"\u5728\u5b57\u7b26\u4e32\u4e2d\u6ca1\u6709\u627e\u5230\u6574\u6570\uff01\");",
+      "prediction": "AccUtils.printLogMsg(\"\u6ca1\u6709\u63d0\u53d6\u5230\u6574\u6570\");",
+      "es": 0.7837837837837838,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 39,
+      "groundtruth": "WindowPermissionCheck.checkPermission(this);",
+      "prediction": "WindowPermissionCheck.checkPermission(this);",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 40,
+      "groundtruth": "AccUtils.timeSleep(3000);",
+      "prediction": "AccUtils.timeSleep(2000);",
+      "es": 0.96,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 41,
+      "groundtruth": "AccUtils.timeSleep(6000);",
+      "prediction": "AccUtils.timeSleep(3000);",
+      "es": 0.96,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 42,
+      "groundtruth": "AccUtils.timeSleep(2000);",
+      "prediction": "AccUtils.printLogMsg(\"\u8fd4\u56de\u5230\u521d\u59cb\u72b6\u6001\");",
+      "es": 0.40625,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 43,
+      "groundtruth": "AccUtils.timeSleep(7000);",
+      "prediction": "AccUtils.timeSleep(7000);",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 44,
+      "groundtruth": "returnCode = Utils.checkForPatchRecover(NEW_PATCH_RESTRICTION_SPACE_SIZE_MIN, maxMemory);",
+      "prediction": "//check the patch file size",
+      "es": 0.1348314606741573,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 45,
+      "groundtruth": "ntokens = ntokens + response.getUsage().getTotalTokens();",
+      "prediction": "ntokens = ntokens + response.getUsage().getTotalTokens();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 46,
+      "groundtruth": ".setContent(response.getChoices().get(0).getMessage().getContent());",
+      "prediction": ".setContent(response.getChoices().get(0).getMessage().getContent());",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 47,
+      "groundtruth": "out.println(filme.getNome()+\" - \"+filme.getDuracao());",
+      "prediction": "out.println(\"Filme: \"+filme.getNome()+\" - Dura\u00e7\u00e3o: \"+filme.getDuracao());",
+      "es": 0.7397260273972603,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 48,
+      "groundtruth": "itempedido.getPreco();",
+      "prediction": "itempedido.getValor();",
+      "es": 0.7727272727272727,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 49,
+      "groundtruth": "= meuDVD.removerFilme();",
+      "prediction": "= meuDVD.removerFilme();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    }
+  ]
+}

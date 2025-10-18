@@ -1,0 +1,147 @@
+{
+  "best_config": {
+    "temp": 0.02,
+    "tokens": 48
+  },
+  "best_score": 0.8822255533765927,
+  "best_metrics": {
+    "pass@1": 0.28,
+    "edit_similarity": 0.7123100257272083,
+    "exact_match": 0.28,
+    "balanced_score": 0.8822255533765927,
+    "total_samples": 50,
+    "passes": 14,
+    "temperature": 0.02,
+    "max_tokens": 48
+  },
+  "all_evaluations": [
+    {
+      "config": {
+        "temp": 0.01,
+        "tokens": 48
+      },
+      "metrics": {
+        "pass@1": 0.26,
+        "edit_similarity": 0.7038629871794676,
+        "exact_match": 0.26,
+        "balanced_score": 0.8394152752802659,
+        "total_samples": 50,
+        "passes": 13,
+        "temperature": 0.01,
+        "max_tokens": 48
+      }
+    },
+    {
+      "config": {
+        "temp": 0.02,
+        "tokens": 48
+      },
+      "metrics": {
+        "pass@1": 0.28,
+        "edit_similarity": 0.7123100257272083,
+        "exact_match": 0.28,
+        "balanced_score": 0.8822255533765927,
+        "total_samples": 50,
+        "passes": 14,
+        "temperature": 0.02,
+        "max_tokens": 48
+      }
+    },
+    {
+      "config": {
+        "temp": 0.03,
+        "tokens": 48
+      },
+      "metrics": {
+        "pass@1": 0.28,
+        "edit_similarity": 0.711124058327286,
+        "exact_match": 0.28,
+        "balanced_score": 0.8816608069956774,
+        "total_samples": 50,
+        "passes": 14,
+        "temperature": 0.03,
+        "max_tokens": 48
+      }
+    },
+    {
+      "config": {
+        "temp": 0.15,
+        "tokens": 44
+      },
+      "metrics": {
+        "pass@1": 0.26,
+        "edit_similarity": 0.6973712889956493,
+        "exact_match": 0.26,
+        "balanced_score": 0.8363239904308286,
+        "total_samples": 50,
+        "passes": 13,
+        "temperature": 0.15,
+        "max_tokens": 44
+      }
+    },
+    {
+      "config": {
+        "temp": 0.18,
+        "tokens": 48
+      },
+      "metrics": {
+        "pass@1": 0.26,
+        "edit_similarity": 0.6941073310708703,
+        "exact_match": 0.26,
+        "balanced_score": 0.8347697247523626,
+        "total_samples": 50,
+        "passes": 13,
+        "temperature": 0.18,
+        "max_tokens": 48
+      }
+    },
+    {
+      "config": {
+        "temp": 0.2,
+        "tokens": 44
+      },
+      "metrics": {
+        "pass@1": 0.28,
+        "edit_similarity": 0.699871989096819,
+        "exact_match": 0.28,
+        "balanced_score": 0.8763026787906932,
+        "total_samples": 50,
+        "passes": 14,
+        "temperature": 0.2,
+        "max_tokens": 44
+      }
+    },
+    {
+      "config": {
+        "temp": 0.22,
+        "tokens": 48
+      },
+      "metrics": {
+        "pass@1": 0.24,
+        "edit_similarity": 0.6969849733866894,
+        "exact_match": 0.24,
+        "balanced_score": 0.7973521518291594,
+        "total_samples": 50,
+        "passes": 12,
+        "temperature": 0.22,
+        "max_tokens": 48
+      }
+    },
+    {
+      "config": {
+        "temp": 0.25,
+        "tokens": 48
+      },
+      "metrics": {
+        "pass@1": 0.24,
+        "edit_similarity": 0.6901914897281334,
+        "exact_match": 0.24,
+        "balanced_score": 0.7941171596107995,
+        "total_samples": 50,
+        "passes": 12,
+        "temperature": 0.25,
+        "max_tokens": 48
+      }
+    }
+  ]
+}
