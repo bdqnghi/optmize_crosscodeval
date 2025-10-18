@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Results and logs
+results/
+logs/
+*.log
+nohup.out
+
+# Large datasets (contains secrets, excluded from git)
+datasets/*.jsonl
+
+# OS
+.DS_Store
+Thumbs.db
