@@ -21,7 +21,6 @@ ENV/
 *~
 
 # Results and logs
-results/
 logs/
 *.log
 nohup.out
