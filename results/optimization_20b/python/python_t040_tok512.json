@@ -1,0 +1,414 @@
+{
+  "metrics": {
+    "pass@1": 0.02,
+    "edit_similarity": 0.3021126408611359,
+    "exact_match": 0.02,
+    "balanced_score": 0.18265104110270539,
+    "total_samples": 50,
+    "passes": 1,
+    "temperature": 0.4,
+    "max_tokens": 512
+  },
+  "results": [
+    {
+      "index": 0,
+      "groundtruth": "sequence_actual[:, -max_stop_string:])[0]",
+      "prediction": "old_tail = tokenizer.decode(generator.",
+      "es": 0.07317073170731703,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 1,
+      "groundtruth": "gen_accept_token(batch_token)",
+      "prediction": "We need to fill missing code inside generate_cfg aft",
+      "es": 0.15384615384615385,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 2,
+      "groundtruth": "settings.token_repetition_penalty_max = 1.176",
+      "prediction": "generator.settings.token_repetition_penalty_max = 1.1",
+      "es": 0.7735849056603774,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 3,
+      "groundtruth": "decode(prompt_ids)[0]",
+      "prediction": "full_prompt = prompt",
+      "es": 0.23809523809523814,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 4,
+      "groundtruth": "gen_begin_reuse(input_ids)",
+      "prediction": "generator.begin_generation(prompt_ids, remaini",
+      "es": 0.3913043478260869,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 5,
+      "groundtruth": "encode(prompts, return_mask = True)",
+      "prediction": "We need to fill missing code in generate_cfg function: after id",
+      "es": 0.19047619047619047,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 6,
+      "groundtruth": "decode(generator.sequence[0])",
+      "prediction": "output = tokenizer.",
+      "es": 0.1724137931034483,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 7,
+      "groundtruth": "calculate_rotary_embedding_base()",
+      "prediction": "config.use_flash_attn_2 = False",
+      "es": 0.18181818181818177,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 8,
+      "groundtruth": "generate_simple(prompts, max_new_tokens = 200)",
+      "prediction": "output = generator.generate(prompts, max_new_tokens=128)",
+      "es": 0.5892857142857143,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 9,
+      "groundtruth": "set_auto_map(args.gpu_split)",
+      "prediction": "def make_config(args):",
+      "es": 0.1785714285714286,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 10,
+      "groundtruth": "forward(generator.sequence[:, -1:], cache, input_mask = mask)",
+      "prediction": "logits = model.",
+      "es": 0.1311475409836066,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 11,
+      "groundtruth": "enter(\"b\") == ConfigRoute(\"a.b\")",
+      "prediction": "assert ConfigRoute(\"a\").enter([\"b\", \"c\"]) == ConfigRoute(",
+      "es": 0.3508771929824561,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 12,
+      "groundtruth": "dispatch(cls) is export_model_async:",
+      "prediction": "export_model.register(cls, func)",
+      "es": 0.16666666666666663,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 13,
+      "groundtruth": "compile(to_compile=to_compile)",
+      "prediction": "compile.compile(to_compile=to_compile)",
+      "es": 0.7894736842105263,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 14,
+      "groundtruth": "set_auto_map('17.615,18.8897')",
+      "prediction": "config = ExLlamaConfig(model_config_path)",
+      "es": 0.09756097560975607,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 15,
+      "groundtruth": "sample_current(logits_mixed)",
+      "prediction": "sampled_token, _ = generator.sample_token(logits_m",
+      "es": 0.30000000000000004,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 16,
+      "groundtruth": "sequence[:, -1:], cache, input_mask = mask)",
+      "prediction": "for _ in range(max_new_tokens):",
+      "es": 0.13953488372093026,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 17,
+      "groundtruth": "dump(opt, f, indent=\"\\t\")",
+      "prediction": "json.dump(opt, f, indent=4)",
+      "es": 0.6666666666666667,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 18,
+      "groundtruth": "gen_begin(ids)",
+      "prediction": "print(past, end = \"\")",
+      "es": 0.1428571428571429,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 19,
+      "groundtruth": "load(f, object_pairs_hook=OrderedDict)  # noqa",
+      "prediction": "load(f)",
+      "es": 0.15217391304347827,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 20,
+      "groundtruth": "update(config.sources[\"default\"])",
+      "prediction": "final_options = Options()",
+      "es": 0.18181818181818177,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 21,
+      "groundtruth": "active is False",
+      "prediction": "from __future__ import anno",
+      "es": 0.18518518518518523,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 22,
+      "groundtruth": "options.keys())",
+      "prediction": "from __future__ import anno",
+      "es": 0.07407407407407407,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 23,
+      "groundtruth": "_logger.getEffectiveLevel() == INFO",
+      "prediction": "assert client._logger.getEffectiveLevel() == INFO",
+      "es": 0.7142857142857143,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 24,
+      "groundtruth": "init_parser(subparser)",
+      "prediction": "cmd_class.register_arguments(subparser)",
+      "es": 0.41025641025641024,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 25,
+      "groundtruth": "option(\"active\"):",
+      "prediction": "class Client:",
+      "es": 0.17647058823529416,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 26,
+      "groundtruth": "gen_feed_tokens(in_tokens)",
+      "prediction": "# Feed in the user input and \"{bot_name}:\", to",
+      "es": 0.17391304347826086,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 27,
+      "groundtruth": "gen_prune_to(config.max_seq_len - expect_tokens - extra_prune, tokenizer.newline_token_id)",
+      "prediction": "expect_tokens = in_tokens.shape[-1] + max_response_tokens",
+      "es": 0.3111111111111111,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 28,
+      "groundtruth": "gen_num_tokens() >= max_tokens:",
+      "prediction": ". The code snippet shows:",
+      "es": 0.19354838709677424,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 29,
+      "groundtruth": "disallow_tokens([tokenizer.newline_token_id, tokenizer.eos_token_id])",
+      "prediction": ". The missing code is likely generator.disallow_tokens([...]) or something. Let's examine context.",
+      "es": 0.23469387755102045,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 30,
+      "groundtruth": "decode(generator.sequence_actual[:, -num_res_tokens:][0])",
+      "prediction": "text = tokenizer.",
+      "es": 0.1578947368421053,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 31,
+      "groundtruth": "sequence_actual[:, -num_res_tokens:][0])",
+      "prediction": "We need to fill missing code: after \"text = tokenizer.decode(generator.\"",
+      "es": 0.18055555555555558,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 32,
+      "groundtruth": "api_populate()",
+      "prediction": "@app.route(\"/api/populate",
+      "es": 0.36,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 33,
+      "groundtruth": "respond_multi(user_input)), mimetype = 'application/json')",
+      "prediction": "@app.route(\"/api/userinput\", methods=['POST'])",
+      "es": 0.2931034482758621,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 34,
+      "groundtruth": "print_options(args)",
+      "prediction": "model_init.add_args(parser)",
+      "es": 0.2962962962962963,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 35,
+      "groundtruth": "get_delivery(data)",
+      "prediction": "else:",
+      "es": 0.16666666666666663,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 36,
+      "groundtruth": "run()",
+      "prediction": "run()",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 37,
+      "groundtruth": "load_from_checkpoint(CKPT_PATH)",
+      "prediction": "We need to fill missing code: instantiate model. We nee",
+      "es": 0.12727272727272732,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 38,
+      "groundtruth": "cointerleave(n)",
+      "prediction": "# interleave and its invers",
+      "es": 0.40740740740740744,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 39,
+      "groundtruth": "interleave(n)",
+      "prediction": "a = FiniteFunction.inte",
+      "es": 0.21739130434782605,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 40,
+      "groundtruth": "build_req()",
+      "prediction": "build()",
+      "es": 0.6363636363636364,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 41,
+      "groundtruth": "agg_diff_fe_calc(self.detect_data, self.anomaly_duration)",
+      "prediction": "We need to fill in the missing code: `agg_list = Utils.```. We need to determine which method of Utils",
+      "es": 0.16666666666666663,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 42,
+      "groundtruth": "diff_percentile_func(self.detect_data, int(k), is_down)[-1]",
+      "prediction": "cur_fe = Utils.get_feature(k, self.detect_data)",
+      "es": 0.288135593220339,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 43,
+      "groundtruth": "diff_feature_calc(detect_data, self.default_point)",
+      "prediction": "detect_data_diff = Utils().diff(detect_data)",
+      "es": 0.21999999999999997,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 44,
+      "groundtruth": "turkey_box_plot(detect_data_diff, self.tk_delta)[3]",
+      "prediction": "We need to fill missing code: In prev_diff_outlier, after detect_data_diff = Utils().diff_f",
+      "es": 0.23076923076923073,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 45,
+      "groundtruth": "turkey_box_plot([freq[k] for k in search_range])[4]",
+      "prediction": "We need to fill the missing code: `up_threshold = Utils.`. We need to know what Utils provi",
+      "es": 0.1428571428571429,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 46,
+      "groundtruth": "exceptions.TDMRepNoParam, self.rule.is_allowed, None, None)",
+      "prediction": "def test_exceptions(self):",
+      "es": 0.13559322033898302,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 47,
+      "groundtruth": "get_header_value(headers, self.HEADER_NAME)",
+      "prediction": "header_value = self.get_header_value(headers, self.HEADER_NAME)",
+      "es": 0.6825396825396826,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 48,
+      "groundtruth": "get_header_value_from_response(response, self.HEADER_NAME)",
+      "prediction": "header_value = self.get_header_value_from_response(response, self.HEADER_NAME)",
+      "es": 0.7435897435897436,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 49,
+      "groundtruth": "HEADER_NAME), \"noai\")",
+      "prediction": "def test_useragent_override(self):",
+      "es": 0.11764705882352944,
+      "em": false,
+      "passed": false
+    }
+  ]
+}

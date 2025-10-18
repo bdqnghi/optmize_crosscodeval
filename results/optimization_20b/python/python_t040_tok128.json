@@ -1,0 +1,414 @@
+{
+  "metrics": {
+    "pass@1": 0.0,
+    "edit_similarity": 0.19690122302511606,
+    "exact_match": 0.0,
+    "balanced_score": 0.09376248715481718,
+    "total_samples": 50,
+    "passes": 0,
+    "temperature": 0.4,
+    "max_tokens": 128
+  },
+  "results": [
+    {
+      "index": 0,
+      "groundtruth": "sequence_actual[:, -max_stop_string:])[0]",
+      "prediction": "old_tail = tokenizer.decode(generator.",
+      "es": 0.07317073170731703,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 1,
+      "groundtruth": "gen_accept_token(batch_token)",
+      "prediction": "batch_token = sampled_token.repeat(2, 1)",
+      "es": 0.275,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 2,
+      "groundtruth": "settings.token_repetition_penalty_max = 1.176",
+      "prediction": "generator.",
+      "es": 0.15555555555555556,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 3,
+      "groundtruth": "decode(prompt_ids)[0]",
+      "prediction": "full_prompt = prompt",
+      "es": 0.23809523809523814,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 4,
+      "groundtruth": "gen_begin_reuse(input_ids)",
+      "prediction": "We need to fill missing code in begin_stream f",
+      "es": 0.19565217391304346,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 5,
+      "groundtruth": "encode(prompts, return_mask = True)",
+      "prediction": "def generate_cfg(prompts, alpha, max_new_tokens):",
+      "es": 0.34693877551020413,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 6,
+      "groundtruth": "decode(generator.sequence[0])",
+      "prediction": "We need to fill missing code after \"output = tokeniz",
+      "es": 0.15384615384615385,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 7,
+      "groundtruth": "calculate_rotary_embedding_base()",
+      "prediction": "config.set_auto_map(args.gpu_split)",
+      "es": 0.17142857142857137,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 8,
+      "groundtruth": "generate_simple(prompts, max_new_tokens = 200)",
+      "prediction": "We need to fill missing code: after generator. we need to generate batched prompts",
+      "es": 0.2195121951219512,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 9,
+      "groundtruth": "set_auto_map(args.gpu_split)",
+      "prediction": "We need to fill missing code in make_config after",
+      "es": 0.16326530612244894,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 10,
+      "groundtruth": "forward(generator.sequence[:, -1:], cache, input_mask = mask)",
+      "prediction": "logits = model.",
+      "es": 0.1311475409836066,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 11,
+      "groundtruth": "enter(\"b\") == ConfigRoute(\"a.b\")",
+      "prediction": "def test_enter():",
+      "es": 0.125,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 12,
+      "groundtruth": "dispatch(cls) is export_model_async:",
+      "prediction": "if export_model_async.dispatch(cls) is export_model_async:",
+      "es": 0.6206896551724138,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 13,
+      "groundtruth": "compile(to_compile=to_compile)",
+      "prediction": "if args.command == \"compile\":",
+      "es": 0.30000000000000004,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 14,
+      "groundtruth": "set_auto_map('17.615,18.8897')",
+      "prediction": "config = ExLlamaConfig(model_config_path)",
+      "es": 0.09756097560975607,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 15,
+      "groundtruth": "sample_current(logits_mixed)",
+      "prediction": "We need to fill the missing code: in the sampling",
+      "es": 0.16326530612244894,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 16,
+      "groundtruth": "sequence[:, -1:], cache, input_mask = mask)",
+      "prediction": "logits = model.forward(generator.",
+      "es": 0.06976744186046513,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 17,
+      "groundtruth": "dump(opt, f, indent=\"\\t\")",
+      "prediction": "We need to fill missing code in parse functio",
+      "es": 0.2222222222222222,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 18,
+      "groundtruth": "gen_begin(ids)",
+      "prediction": "print(past, end = \"\")",
+      "es": 0.1428571428571429,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 19,
+      "groundtruth": "load(f, object_pairs_hook=OrderedDict)  # noqa",
+      "prediction": "def parse(json_path: str) -> dict:",
+      "es": 0.19565217391304346,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 20,
+      "groundtruth": "update(config.sources[\"default\"])",
+      "prediction": "We need to fill missing code between prefix and suffix. Let",
+      "es": 0.18644067796610164,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 21,
+      "groundtruth": "active is False",
+      "prediction": "assert os.environ.get(\"_APP",
+      "es": 0.14814814814814814,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 22,
+      "groundtruth": "options.keys())",
+      "prediction": "We need to fill missing cod",
+      "es": 0.11111111111111116,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 23,
+      "groundtruth": "_logger.getEffectiveLevel() == INFO",
+      "prediction": "def test_logger_default_level():",
+      "es": 0.22857142857142854,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 24,
+      "groundtruth": "init_parser(subparser)",
+      "prediction": "We need to fill missing code in _regist",
+      "es": 0.1282051282051282,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 25,
+      "groundtruth": "option(\"active\"):",
+      "prediction": "if not self._config.",
+      "es": 0.050000000000000044,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 26,
+      "groundtruth": "gen_feed_tokens(in_tokens)",
+      "prediction": "# Feed in the user input and \"{bot_name}:\", to",
+      "es": 0.17391304347826086,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 27,
+      "groundtruth": "gen_prune_to(config.max_seq_len - expect_tokens - extra_prune, tokenizer.newline_token_id)",
+      "prediction": "expect_tokens = in_tokens.shape[-1] + max_response_tokens",
+      "es": 0.3111111111111111,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 28,
+      "groundtruth": "gen_num_tokens() >= max_tokens:",
+      "prediction": "expect_tokens = in_tokens.shape[-1] + max_response_toke",
+      "es": 0.3090909090909091,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 29,
+      "groundtruth": "disallow_tokens([tokenizer.newline_token_id, tokenizer.eos_token_id])",
+      "prediction": "if i < min_response_tokens:",
+      "es": 0.21739130434782605,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 30,
+      "groundtruth": "decode(generator.sequence_actual[:, -num_res_tokens:][0])",
+      "prediction": "We need to fill missing code: after `text = tokenizer.` The code likely decodes current tokens. Let's",
+      "es": 0.2178217821782178,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 31,
+      "groundtruth": "sequence_actual[:, -num_res_tokens:][0])",
+      "prediction": "# Decode the current line and print any characters added",
+      "es": 0.1607142857142857,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 32,
+      "groundtruth": "api_populate()",
+      "prediction": "We need to fill missing c",
+      "es": 0.07999999999999996,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 33,
+      "groundtruth": "respond_multi(user_input)), mimetype = 'application/json')",
+      "prediction": "We need to fill missing code in api_userinput route. Let's locate where missing. In code:",
+      "es": 0.2134831460674157,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 34,
+      "groundtruth": "print_options(args)",
+      "prediction": "We need to fill missing code betwe",
+      "es": 0.1470588235294118,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 35,
+      "groundtruth": "get_delivery(data)",
+      "prediction": "We need to fill missing code bet",
+      "es": 0.15625,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 36,
+      "groundtruth": "run()",
+      "prediction": "We need t",
+      "es": 0.11111111111111116,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 37,
+      "groundtruth": "load_from_checkpoint(CKPT_PATH)",
+      "prediction": "We need to fill missing code for model initialization.",
+      "es": 0.16666666666666663,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 38,
+      "groundtruth": "cointerleave(n)",
+      "prediction": "a = FiniteFunction.interlea",
+      "es": 0.18518518518518523,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 39,
+      "groundtruth": "interleave(n)",
+      "prediction": "def test_interleave_inv",
+      "es": 0.4782608695652174,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 40,
+      "groundtruth": "build_req()",
+      "prediction": "req = RequestBuilde",
+      "es": 0.10526315789473684,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 41,
+      "groundtruth": "agg_diff_fe_calc(self.detect_data, self.anomaly_duration)",
+      "prediction": ". We need to figure out what Utils has. Let's inspect context: imports: from common.constants import C",
+      "es": 0.20588235294117652,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 42,
+      "groundtruth": "diff_percentile_func(self.detect_data, int(k), is_down)[-1]",
+      "prediction": "We need to fill missing code: in run method, after 'for k, v in features.items():' we have 'cur_fe = Utils",
+      "es": 0.160377358490566,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 43,
+      "groundtruth": "diff_feature_calc(detect_data, self.default_point)",
+      "prediction": "We need to fill missing code: In prev_diff_outlier, after detect_data_diff = Utils(). ???.",
+      "es": 0.21111111111111114,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 44,
+      "groundtruth": "turkey_box_plot(detect_data_diff, self.tk_delta)[3]",
+      "prediction": "We need to fill missing code: In prev_diff_outlier, after compute detect_data_diff, down_th",
+      "es": 0.19780219780219777,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 45,
+      "groundtruth": "turkey_box_plot([freq[k] for k in search_range])[4]",
+      "prediction": "up_threshold = Utils.",
+      "es": 0.1568627450980392,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 46,
+      "groundtruth": "exceptions.TDMRepNoParam, self.rule.is_allowed, None, None)",
+      "prediction": "def test_exceptions(self):",
+      "es": 0.13559322033898302,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 47,
+      "groundtruth": "get_header_value(headers, self.HEADER_NAME)",
+      "prediction": "header_value = self.get_header_value(headers, self.HEADER_NAME)",
+      "es": 0.6825396825396826,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 48,
+      "groundtruth": "get_header_value_from_response(response, self.HEADER_NAME)",
+      "prediction": "if headers:",
+      "es": 0.12068965517241381,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 49,
+      "groundtruth": "HEADER_NAME), \"noai\")",
+      "prediction": "with urllib.request.urlopen(request,",
+      "es": 0.02777777777777779,
+      "em": false,
+      "passed": false
+    }
+  ]
+}

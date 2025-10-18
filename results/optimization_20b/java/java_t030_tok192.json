@@ -1,0 +1,414 @@
+{
+  "metrics": {
+    "pass@1": 0.02,
+    "edit_similarity": 0.2943373761308086,
+    "exact_match": 0.02,
+    "balanced_score": 0.17894853408826386,
+    "total_samples": 50,
+    "passes": 1,
+    "temperature": 0.3,
+    "max_tokens": 192
+  },
+  "results": [
+    {
+      "index": 0,
+      "groundtruth": "int startAngle = ((Arc) object).getStartAngle();",
+      "prediction": "int width = ((Arc) object).getWidth();",
+      "es": 0.625,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 1,
+      "groundtruth": "((Line) object).getColor());",
+      "prediction": "g.setColor(",
+      "es": 0.3214285714285714,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 2,
+      "groundtruth": "(Arc) object).getStopAngle();",
+      "prediction": "We need to fill missing code: In the code, after `int stop",
+      "es": 0.12068965517241381,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 3,
+      "groundtruth": "server.blockUntilShutdown();",
+      "prediction": "server.blockUntilShutdown();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 4,
+      "groundtruth": "HttpClientUtil.sendGetRequest();",
+      "prediction": "final OpenTelemetry openTelemetry = GlobalOpenTelemetry.get();",
+      "es": 0.22580645161290325,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 5,
+      "groundtruth": "GreetingClient.start();",
+      "prediction": "We need to fill code between try (Scope ignore",
+      "es": 0.17391304347826086,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 6,
+      "groundtruth": "RocketMqClients.CreatePushConsumer(messageView -> {",
+      "prediction": "public class ProcessC {",
+      "es": 0.21568627450980393,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 7,
+      "groundtruth": "Producer producer = RocketMqClients.CreateProducer();",
+      "prediction": "We need to fill missing code between try { and SendReceipt sendReceipt = Rocket",
+      "es": 0.15189873417721522,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 8,
+      "groundtruth": "systemMessage.setContent(systemprompt);",
+      "prediction": "// System prompt",
+      "es": 0.2564102564102564,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 9,
+      "groundtruth": "\"Contador de tokens: %d\",gptService.getNumTokens());",
+      "prediction": "private void printUsage(Update update) {",
+      "es": 0.17307692307692313,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 10,
+      "groundtruth": "chatRequest.setMaxTokens(maxtokens);",
+      "prediction": "ChatRequest chatRequest = new ChatRequest();",
+      "es": 0.36363636363636365,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 11,
+      "groundtruth": "chatRequest.setModel(model);",
+      "prediction": "ChatRequest chatRequest = new ChatRequest();",
+      "es": 0.36363636363636365,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 12,
+      "groundtruth": "systemMessage.setRole(\"system\");",
+      "prediction": "We need to fill missing code between prefix and suffix. Let's lo",
+      "es": 0.15625,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 13,
+      "groundtruth": "userMessage.setContent(this.presentation);",
+      "prediction": "Message userMessage = new Message();",
+      "es": 0.30952380952380953,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 14,
+      "groundtruth": "exampleMessage.setRole(role.toLowerCase());",
+      "prediction": "private ArrayList<Message> getExamples(ArrayList<String> examples) {",
+      "es": 0.27941176470588236,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 15,
+      "groundtruth": "AccUtils.printLogMsg(\"\u63d0\u53d6\u5230\u7684\u7b2c\u4e00\u4e2a\u6574\u6570\u662f\uff1a\" + i);",
+      "prediction": "int i = -1;",
+      "es": 0.15000000000000002,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 16,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");",
+      "prediction": "AccUtils.startApplication(Variable.context, \"com.alibaba.and",
+      "es": 0.23333333333333328,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 17,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5f00\");",
+      "prediction": "We need to fill missing code between prefix and suffix. Let's",
+      "es": 0.1311475409836066,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 18,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6253\u5f00\u9489\u9489\");",
+      "prediction": "@RequiresApi(24)",
+      "es": 0.1724137931034483,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 19,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u6253\u5361\");",
+      "prediction": "//Rect(425, 1280 - 656, 1362); packageName: com.alibaba.an",
+      "es": 0.051724137931034475,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 20,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u6682\u65f6\u4e0d\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u597d\u7684\");",
+      "es": 0.9,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 21,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6807\u9898 => \" + videoDesc);",
+      "prediction": "String videoDesc = currentVideoDesc();",
+      "es": 0.32558139534883723,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 22,
+      "groundtruth": "AccUtils.printLogMsg(\"\u8fd4\u56de\u5230\u521d\u59cb\u72b6\u6001\");",
+      "prediction": "We need to fill missing code between prefix and suffix. Let's ex",
+      "es": 0.125,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 23,
+      "groundtruth": "AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));",
+      "prediction": "We need to fill missing code between prefix and suffix. Let's examine prefix: after \"AccUtils.pr",
+      "es": 0.16666666666666663,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 24,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u597d\u7684\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5f00\");",
+      "es": 0.8709677419354839,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 25,
+      "groundtruth": "dyTaskService.main();",
+      "prediction": "DyTaskService dyTaskService = new DyTaskSe",
+      "es": 0.3571428571428571,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 26,
+      "groundtruth": "AccUtils.printLogMsg(\"\u5411\u4e0b\u6ed1\u52a8\");",
+      "prediction": "String videoDesc = currentVideoDesc();",
+      "es": 0.10526315789473684,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 27,
+      "groundtruth": "= AccUtils.findElementListByContainText(\"\u6253\u5361\");",
+      "prediction": "//Rect(425, 1280 - 656, 1362); packageName: com.alibaba.android.rimet; className: android.vi",
+      "es": 0.09782608695652173,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 28,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6253\u5361\u5b8c\u6210\uff0c\u8fd4\u56de\u684c\u9762\");",
+      "prediction": "AccUtils.back();",
+      "es": 0.3529411764705882,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 29,
+      "groundtruth": "TinkerManager.setUpgradeRetryEnable(true);",
+      "prediction": "TinkerManager.setTinkerApplicationLike(this);",
+      "es": 0.5333333333333333,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 30,
+      "groundtruth": "AccUtils.findElementByText(\"\u8003\u52e4\u6253\u5361\"));",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5f00\");",
+      "es": 0.4722222222222222,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 31,
+      "groundtruth": "TinkerManager.installTinker(this);",
+      "prediction": "Code after cursor:",
+      "es": 0.1470588235294118,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 32,
+      "groundtruth": "= AccUtils.findElementByText(\"\u6211\u77e5\u9053\u4e86\");",
+      "prediction": "AccessibilityNodeInfo elementByText",
+      "es": 0.2432432432432432,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 33,
+      "groundtruth": "element = AccUtils.findElementByText(\"\u4ee5\u540e\u518d\u8bf4\");",
+      "prediction": "AccessibilityNodeInfo elementByText = AccUtils.findElementByText(\"\u6211\u77e5\u9053\u4e86\");",
+      "es": 0.5616438356164384,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 34,
+      "groundtruth": "AccUtils.printLogMsg(\"open dy App\");",
+      "prediction": "@RequiresApi(24)",
+      "es": 0.13888888888888884,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 35,
+      "groundtruth": "AccUtils.openApp(\"\u6296\u97f3\");",
+      "prediction": "AccUtils.moveFloatWindow(\"\u6253\u5f00\");",
+      "es": 0.5483870967741935,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 36,
+      "groundtruth": "TinkerManager.setTinkerApplicationLike(this);",
+      "prediction": "TinkerManager.setUpgradeRetryEnable(true);",
+      "es": 0.5333333333333333,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 37,
+      "groundtruth": "Utils.isBackground()) {",
+      "prediction": "if (checkIfNeedKill(result)) {",
+      "es": 0.19999999999999996,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 38,
+      "groundtruth": "AccUtils.printLogMsg(\"\u5728\u5b57\u7b26\u4e32\u4e2d\u6ca1\u6709\u627e\u5230\u6574\u6570\uff01\");",
+      "prediction": "public static int extractFirstIntFromString(String str){",
+      "es": 0.1428571428571429,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 39,
+      "groundtruth": "WindowPermissionCheck.checkPermission(this);",
+      "prediction": "// \u5728\u5176\u4ed6\u5e94\u7528\u4e0a\u5c42\u663e\u793a",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 40,
+      "groundtruth": "AccUtils.timeSleep(3000);",
+      "prediction": "We need to fill missing code between prefix and su",
+      "es": 0.16000000000000003,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 41,
+      "groundtruth": "AccUtils.timeSleep(6000);",
+      "prediction": "We need to fill missing code between prefix and su",
+      "es": 0.16000000000000003,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 42,
+      "groundtruth": "AccUtils.timeSleep(2000);",
+      "prediction": "We need to insert code between prefix and suffix.",
+      "es": 0.16326530612244894,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 43,
+      "groundtruth": "AccUtils.timeSleep(7000);",
+      "prediction": "AccUtils.moveFloatWindow(\"\u6253\u5f00\");",
+      "es": 0.4516129032258065,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 44,
+      "groundtruth": "returnCode = Utils.checkForPatchRecover(NEW_PATCH_RESTRICTION_SPACE_SIZE_MIN, maxMemory);",
+      "prediction": "int returnCode = super.patchCheck(path, patchMd5);",
+      "es": 0.2471910112359551,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 45,
+      "groundtruth": "ntokens = ntokens + response.getUsage().getTotalTokens();",
+      "prediction": "response = client.getCompletion(chatRequest);",
+      "es": 0.2807017543859649,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 46,
+      "groundtruth": ".setContent(response.getChoices().get(0).getMessage().getContent());",
+      "prediction": "assistantMessage.setContent",
+      "es": 0.3382352941176471,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 47,
+      "groundtruth": "out.println(filme.getNome()+\" - \"+filme.getDuracao());",
+      "prediction": "public void play(){",
+      "es": 0.16666666666666663,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 48,
+      "groundtruth": "itempedido.getPreco();",
+      "prediction": "public float getTotalPedido(){",
+      "es": 0.2666666666666667,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 49,
+      "groundtruth": "= meuDVD.removerFilme();",
+      "prediction": "System.out.println(meuDVD);",
+      "es": 0.18518518518518523,
+      "em": false,
+      "passed": false
+    }
+  ]
+}

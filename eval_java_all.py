@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
 Balanced Multi-Objective Optimization for Java
-Target: Optimize (ES, EM, pass@1) together with balanced weights
+Target: Optimize (ES, EM, accuracy) together with balanced weights
 Strategy: Find configurations that maximize weighted score across all metrics
 
 Scoring function:
-  balanced_score = w1 * ES_norm + w2 * EM_norm + w3 * pass@1_norm
+  balanced_score = w1 * ES_norm + w2 * EM_norm + w3 * accuracy_norm
 
 Where:
   - ES_norm = ES / 0.7 (normalized to target)
   - EM_norm = EM / 0.25 (normalized to target)
-  - pass@1_norm = pass@1 / 0.55 (normalized to target)
+  - accuracy_norm = accuracy / 0.55 (normalized to target)
   - w1, w2, w3 are weights (default: equal weighting)
 """
 
@@ -156,18 +156,18 @@ def check_pass(es: float, em: bool, es_threshold: float = 0.7) -> bool:
     return es >= es_threshold and em
 
 
-def calculate_balanced_score(es: float, em: float, pass_at_1: float,
-                             w_es: float = 1.0, w_em: float = 1.0, w_pass: float = 1.0) -> float:
+def calculate_balanced_score(es: float, em: float, accuracy: float,
+                             w_es: float = 1.0, w_em: float = 1.0, w_acc: float = 1.0) -> float:
     """
     Calculate balanced score with weighted normalization to targets.
 
     Args:
         es: Edit similarity (0-1)
         em: Exact match rate (0-1)
-        pass_at_1: Pass@1 rate (0-1)
+        accuracy: Accuracy rate (0-1)
         w_es: Weight for ES (default 1.0)
         w_em: Weight for EM (default 1.0)
-        w_pass: Weight for pass@1 (default 1.0)
+        w_acc: Weight for accuracy (default 1.0)
 
     Returns:
         Balanced score (higher is better)
@@ -175,11 +175,11 @@ def calculate_balanced_score(es: float, em: float, pass_at_1: float,
     # Normalize to targets
     es_norm = es / 0.7
     em_norm = em / 0.25
-    pass_norm = pass_at_1 / 0.55
+    acc_norm = accuracy / 0.55
 
     # Weighted average
-    total_weight = w_es + w_em + w_pass
-    balanced = (w_es * es_norm + w_em * em_norm + w_pass * pass_norm) / total_weight
+    total_weight = w_es + w_em + w_acc
+    balanced = (w_es * es_norm + w_em * em_norm + w_acc * acc_norm) / total_weight
 
     return balanced
 
@@ -238,16 +238,16 @@ def evaluate_config(
             print(f"\nError at index {i}: {e}")
             results.append({"index": i, "error": str(e), "es": 0.0, "em": False, "passed": False})
 
-    pass_at_1 = passes / len(results) if results else 0.0
+    accuracy = passes / len(results) if results else 0.0
     avg_es = sum(r['es'] for r in results if 'es' in r) / len(results) if results else 0.0
     avg_em = sum(1 for r in results if r.get('em', False)) / len(results) if results else 0.0
 
     # Calculate balanced score
-    balanced = calculate_balanced_score(avg_es, avg_em, pass_at_1)
+    balanced = calculate_balanced_score(avg_es, avg_em, accuracy)
 
     return {
         "metrics": {
-            "pass@1": pass_at_1,
+            "accuracy": accuracy,
             "edit_similarity": avg_es,
             "exact_match": avg_em,
             "balanced_score": balanced,
@@ -278,7 +278,7 @@ def main():
     print("Targets:")
     print("  - ES >= 0.7")
     print("  - EM >= 0.25")
-    print("  - pass@1 >= 0.55")
+    print("  - Accuracy >= 0.55")
     print("=" * 70)
     print()
 
@@ -304,14 +304,14 @@ def main():
 
         print()
         print(f"Config: T={cfg['temp']}, max_tokens={cfg['tokens']}")
-        print(f"  ES: {metrics['edit_similarity']:.4f}, EM: {metrics['exact_match']:.4f}, pass@1: {metrics['pass@1']:.4f}")
+        print(f"  ES: {metrics['edit_similarity']:.4f}, EM: {metrics['exact_match']:.4f}, Accuracy: {metrics['accuracy']:.4f}")
         print(f"  Balanced Score: {metrics['balanced_score']:.4f}")
 
         # Check targets
         es_met = metrics['edit_similarity'] >= 0.7
         em_met = metrics['exact_match'] >= 0.25
-        pass_met = metrics['pass@1'] >= 0.55
-        all_met = es_met and em_met and pass_met
+        acc_met = metrics['accuracy'] >= 0.55
+        all_met = es_met and em_met and acc_met
 
         if all_met:
             print(f"  ✅ ALL TARGETS MET!")
@@ -321,8 +321,8 @@ def main():
                 status.append(f"ES: {0.7 - metrics['edit_similarity']:.3f} below")
             if not em_met:
                 status.append(f"EM: {0.25 - metrics['exact_match']:.3f} below")
-            if not pass_met:
-                status.append(f"pass@1: {0.55 - metrics['pass@1']:.3f} below")
+            if not acc_met:
+                status.append(f"Accuracy: {0.55 - metrics['accuracy']:.3f} below")
             print(f"  ⚠️  Gaps: {', '.join(status)}")
 
         # Save individual result
@@ -352,7 +352,7 @@ def main():
     print(f"Configuration: T={best_config['temp']}, max_tokens={best_config['tokens']}")
     print(f"  ES: {best_metrics['edit_similarity']:.4f}")
     print(f"  EM: {best_metrics['exact_match']:.4f}")
-    print(f"  pass@1: {best_metrics['pass@1']:.4f}")
+    print(f"  Accuracy: {best_metrics['accuracy']:.4f}")
     print(f"  Balanced Score: {best_metrics['balanced_score']:.4f}")
     print(f"  Total Samples: {best_metrics['total_samples']}")
     print(f"  Passes: {best_metrics['passes']}")
@@ -360,8 +360,8 @@ def main():
     # Check targets
     es_met = best_metrics['edit_similarity'] >= 0.7
     em_met = best_metrics['exact_match'] >= 0.25
-    pass_met = best_metrics['pass@1'] >= 0.55
-    all_met = es_met and em_met and pass_met
+    acc_met = best_metrics['accuracy'] >= 0.55
+    all_met = es_met and em_met and acc_met
 
     print()
     if all_met:
@@ -370,7 +370,7 @@ def main():
         print("Target Status:")
         print(f"  ES: {'✅' if es_met else '❌'} ({best_metrics['edit_similarity']:.4f} / 0.70)")
         print(f"  EM: {'✅' if em_met else '❌'} ({best_metrics['exact_match']:.4f} / 0.25)")
-        print(f"  pass@1: {'✅' if pass_met else '❌'} ({best_metrics['pass@1']:.4f} / 0.55)")
+        print(f"  Accuracy: {'✅' if acc_met else '❌'} ({best_metrics['accuracy']:.4f} / 0.55)")
 
     print("=" * 70)
 

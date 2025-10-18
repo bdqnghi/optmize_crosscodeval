@@ -1,0 +1,468 @@
+{
+  "model_size": "235b",
+  "model_name": "accounts/fireworks/models/qwen3-235b-a22b-instruct-2507",
+  "model_type": "chat",
+  "dataset": "datasets/python_50_samples.jsonl",
+  "temperature": 0.2,
+  "max_tokens": 512,
+  "metrics": {
+    "exact_match_rate": 0.12,
+    "pass@1": 0.12,
+    "avg_edit_similarity": 0.4614894202075749,
+    "avg_sequence_similarity": 0.5384527295879492,
+    "exact_matches": 6,
+    "total_samples": 50
+  },
+  "results": [
+    {
+      "prompt": "<|fim_prefix|>import asyncio\nimport websockets\nimport json\nfrom sentencepiece import SentencePieceProcessor\n\nfrom model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom lora import ExLlamaLora\nfrom to...",
+      "groundtruth": "sequence_actual[:, -max_stop_string:])[0]",
+      "prediction": "sequence_actual[:, -max_stop_string:])[0]",
+      "raw_generation": "```python\nsequence_actual[:, -max_stop_string:])[0]\n```",
+      "exact_match": true,
+      "edit_similarity": 1.0,
+      "sequence_similarity": 1.0
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport torch\nimport torch.nn.functional as F\nimport o...",
+      "groundtruth": "gen_accept_token(batch_token)",
+      "prediction": "gen_accept(batch_token)",
+      "raw_generation": "gen_accept(batch_token)",
+      "exact_match": false,
+      "edit_similarity": 0.7931034482758621,
+      "sequence_similarity": 0.8846153846153846
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom flask import Flask, request\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport os, glob\n\n# D...",
+      "groundtruth": "settings.token_repetition_penalty_max = 1.176",
+      "prediction": "settings.token_repetition_penalty_max = 1.1\n    generator.settings.token_repetition_penalty_sustain = config.max_seq_len\n    generator.settings.temperature = 0.7\n    generator.settings.top_p = 0.1\n    generator.settings.top_k = 40\n    generator.settings.typical = 0.0    # Disabled\n\n    outputs = generator.generate_simple(prompt, max_new_tokens = 200)\n    return outputs",
+      "raw_generation": "```python\nsettings.token_repetition_penalty_max = 1.1\n    generator.settings.token_repetition_penalty_sustain = config.max_seq_len\n    generator.settings.temperature = 0.7\n    generator.settings.top_p = 0.1\n    generator.settings.top_k = 40\n    generator.settings.typical = 0.0    # Disabled\n\n    outputs = generator.generate_simple(prompt, max_new_tokens = 200)\n    return outputs\n```",
+      "exact_match": false,
+      "edit_similarity": 0.1185983827493261,
+      "sequence_similarity": 0.21153846153846154
+    },
+    {
+      "prompt": "<|fim_prefix|>import asyncio\nimport websockets\nimport json\nfrom sentencepiece import SentencePieceProcessor\n\nfrom model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom lora import ExLlamaLora\nfrom to...",
+      "groundtruth": "decode(prompt_ids)[0]",
+      "prediction": "decode(input_ids)[0]",
+      "raw_generation": "decode(input_ids)[0]",
+      "exact_match": false,
+      "edit_similarity": 0.7619047619047619,
+      "sequence_similarity": 0.8292682926829268
+    },
+    {
+      "prompt": "<|fim_prefix|>import asyncio\nimport websockets\nimport json\nfrom sentencepiece import SentencePieceProcessor\n\nfrom model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom lora import ExLlamaLora\nfrom to...",
+      "groundtruth": "gen_begin_reuse(input_ids)",
+      "prediction": "generator.begin_stream(prompt_ids)",
+      "raw_generation": "generator.begin_stream(prompt_ids)",
+      "exact_match": false,
+      "edit_similarity": 0.5,
+      "sequence_similarity": 0.6333333333333333
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport torch\nimport torch.nn.functional as F\nimport o...",
+      "groundtruth": "encode(prompts, return_mask = True)",
+      "prediction": "ids, mask = tokenizer.encode(prompts, return_mask = True)",
+      "raw_generation": "ids, mask = tokenizer.encode(prompts, return_mask = True)",
+      "exact_match": false,
+      "edit_similarity": 0.6140350877192983,
+      "sequence_similarity": 0.7608695652173914
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport torch\nimport torch.nn.functional as F\nimport o...",
+      "groundtruth": "decode(generator.sequence[0])",
+      "prediction": "decode(generator.sequence[0])",
+      "raw_generation": "decode(generator.sequence[0])",
+      "exact_match": true,
+      "edit_similarity": 1.0,
+      "sequence_similarity": 1.0
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom tokenizer import ExLlamaTokenizer\nimport argparse, sys, os, glob\nfrom torch import version as torch_version\nfrom globals impor...",
+      "groundtruth": "calculate_rotary_embedding_base()",
+      "prediction": "config.use_flash_attn_2 = False\n    config.max_input_len = args.length\n    if args.flash_attn:\n        config.use_flash_attn_2 = True\n        try:\n            config.max_input_len = int(args.flash_attn)\n        except ValueError:\n            pass\n\n    config.matmul_recons_thd = args.matmul_recons_thd\n    config.fused_mlp_thd = args.fused_mlp_thd\n    config.sdp_thd = args.sdp_thd\n    config.matmul_fused_remap = args.matmul_fused_remap\n    config.fused_attn = not args.no_fused_attn\n\n    config.rmsnorm_no_half2 = args.rmsnorm_no_half2\n    config.rope_no_half2 = args.rope_no_half2\n    config.matmul_no_half2 = args.matmul_no_half2\n    config.silu_no_half2 = args.silu_no_half2\n    config.concurrent_streams = args.concurrent_streams\n\n    if args.theta:\n        config.rotary_embedding_base = args.theta",
+      "raw_generation": "config.use_flash_attn_2 = False\n    config.max_input_len = args.length\n    if args.flash_attn:\n        config.use_flash_attn_2 = True\n        try:\n            config.max_input_len = int(args.flash_attn)\n        except ValueError:\n            pass\n\n    config.matmul_recons_thd = args.matmul_recons_thd\n    config.fused_mlp_thd = args.fused_mlp_thd\n    config.sdp_thd = args.sdp_thd\n    config.matmul_fused_remap = args.matmul_fused_remap\n    config.fused_attn = not args.no_fused_attn\n\n    config.rms",
+      "exact_match": false,
+      "edit_similarity": 0.03850931677018632,
+      "sequence_similarity": 0.059665871121718374
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport os, glob\n\n# Directory containing model, tokeni...",
+      "groundtruth": "generate_simple(prompts, max_new_tokens = 200)",
+      "prediction": "generate_simple(prompts, max_new_tokens=200)",
+      "raw_generation": "generate_simple(prompts, max_new_tokens=200)",
+      "exact_match": false,
+      "edit_similarity": 0.9565217391304348,
+      "sequence_similarity": 0.9777777777777777
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom tokenizer import ExLlamaTokenizer\nimport argparse, sys, os, glob\nfrom torch import version as torch_version\nfrom globals impor...",
+      "groundtruth": "set_auto_map(args.gpu_split)",
+      "prediction": "config.alpha_value = args.alpha\n    config.calculate_rotary_embedding_base()\n\n    if args.flash_attn:\n        config.use_flash_attn_2 = True\n        try:\n            config.max_input_len = int(args.flash_attn)\n        except ValueError:\n            pass\n\n    config.matmul_recons_thd = args.matmul_recons_thd\n    config.fused_mlp_thd = args.fused_mlp_thd\n    config.sdp_thd = args.sdp_thd\n    config.matmul_fused_remap = args.matmul_fused_remap\n    config.fused_attn = not args.no_fused_attn\n\n    config.rmsnorm_no_half2 = args.rmsnorm_no_half2\n    config.rope_no_half2 = args.rope_no_half2\n    config.matmul_no_half2 = args.matmul_no_half2\n    config.silu_no_half2 = args.silu_no_half2\n    config.concurrent_streams = args.concurrent_streams\n\n    if args.theta:\n        config.rotary_embedding_base = args.theta",
+      "raw_generation": "config.alpha_value = args.alpha\n    config.calculate_rotary_embedding_base()\n\n    if args.flash_attn:\n        config.use_flash_attn_2 = True\n        try:\n            config.max_input_len = int(args.flash_attn)\n        except ValueError:\n            pass\n\n    config.matmul_recons_thd = args.matmul_recons_thd\n    config.fused_mlp_thd = args.fused_mlp_thd\n    config.sdp_thd = args.sdp_thd\n    config.matmul_fused_remap = args.matmul_fused_remap\n    config.fused_attn = not args.no_fused_attn\n\n    con",
+      "exact_match": false,
+      "edit_similarity": 0.03201970443349755,
+      "sequence_similarity": 0.05238095238095238
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport torch\nimport torch.nn.functional as F\nimport o...",
+      "groundtruth": "forward(generator.sequence[:, -1:], cache, input_mask = mask)",
+      "prediction": "logits = model.forward(generator.current_tokens, generator.current_mask, last_id_only = False).float()\n        logits = logits[:, -1, :]",
+      "raw_generation": "logits = model.forward(generator.current_tokens, generator.current_mask, last_id_only = False).float()\n        logits = logits[:, -1, :]",
+      "exact_match": false,
+      "edit_similarity": 0.25735294117647056,
+      "sequence_similarity": 0.39593908629441626
+    },
+    {
+      "prompt": "<|fim_prefix|>from __future__ import annotations\n\nimport pytest\n\nfrom configzen.errors import ConfigSyntaxError\nfrom configzen.model import ConfigRoute\n\nSTRING_DECOMPOSITION_PARAMS = [\n    (\"a.b.c\", [...",
+      "groundtruth": "enter(\"b\") == ConfigRoute(\"a.b\")",
+      "prediction": "enter([\"b\", \"c\"]) == ConfigRoute(\"a.b.c\")\n    assert ConfigRoute(\"a\").enter(\"b.c\") == ConfigRoute(\"a.b.c\")",
+      "raw_generation": "```python\nenter([\"b\", \"c\"]) == ConfigRoute(\"a.b.c\")\n    assert ConfigRoute(\"a\").enter(\"b.c\") == ConfigRoute(\"a.b.c\")\n```",
+      "exact_match": false,
+      "edit_similarity": 0.30188679245283023,
+      "sequence_similarity": 0.463768115942029
+    },
+    {
+      "prompt": "<|fim_prefix|>from __future__ import annotations\n\nimport contextlib\nimport functools\nfrom collections.abc import Callable, Coroutine, Iterator\nfrom typing import TYPE_CHECKING, Any, cast, overload\n\nfr...",
+      "groundtruth": "dispatch(cls) is export_model_async:",
+      "prediction": "def default_async_func(obj: Any, **kwargs: Any) -> Any:\n                kwargs |= predefined_kwargs\n                return await obj.export_async(**kwargs)\n\n            export_model_async.register(cls, default_async_func)\n    else:\n        export_model.register(cls, func)\n        if export_model_async.dispatch(cls) is export_model_async:\n\n            async def default_async_func(obj: Any, **kwargs: Any) -> Any:\n                nonlocal func\n                if TYPE_CHECKING:\n                    func = cast(Callable[..., dict[str, Any]], func)\n\n                return func(obj, **kwargs)\n\n            export_model_async.register(cls, default_async_func)\n    return cls",
+      "raw_generation": "```python\n            def default_async_func(obj: Any, **kwargs: Any) -> Any:\n                kwargs |= predefined_kwargs\n                return await obj.export_async(**kwargs)\n\n            export_model_async.register(cls, default_async_func)\n    else:\n        export_model.register(cls, func)\n        if export_model_async.dispatch(cls) is export_model_async:\n\n            async def default_async_func(obj: Any, **kwargs: Any) -> Any:\n                nonlocal func\n                if TYPE_CHECKING:",
+      "exact_match": false,
+      "edit_similarity": 0.0535714285714286,
+      "sequence_similarity": 0.1016949152542373
+    },
+    {
+      "prompt": "<|fim_prefix|>import argparse\nimport logging\nfrom logging.config import fileConfig\nfrom pathlib import Path\n\nfrom . import compile, decompile\n\n\ndef parse_args() -> argparse.Namespace:\n    # create the...",
+      "groundtruth": "compile(to_compile=to_compile)",
+      "prediction": ".compile(to_compile=to_compile)",
+      "raw_generation": ".compile(to_compile=to_compile)",
+      "exact_match": false,
+      "edit_similarity": 0.967741935483871,
+      "sequence_similarity": 0.9836065573770492
+    },
+    {
+      "prompt": "<|fim_prefix|>import asyncio\nimport websockets\nimport json\nfrom sentencepiece import SentencePieceProcessor\n\nfrom model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom lora import ExLlamaLora\nfrom to...",
+      "groundtruth": "set_auto_map('17.615,18.8897')",
+      "prediction": "config.model_path = model_path                          # supply path to model weights file",
+      "raw_generation": "config.model_path = model_path                          # supply path to model weights file",
+      "exact_match": false,
+      "edit_similarity": 0.07692307692307687,
+      "sequence_similarity": 0.11570247933884298
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport torch\nimport torch.nn.functional as F\nimport o...",
+      "groundtruth": "sample_current(logits_mixed)",
+      "prediction": "sampled_token, _ = generator.sample_logits(logits_mixed.unsqueeze(0), generator.sequence)",
+      "raw_generation": "sampled_token, _ = generator.sample_logits(logits_mixed.unsqueeze(0), generator.sequence)",
+      "exact_match": false,
+      "edit_similarity": 0.2808988764044944,
+      "sequence_similarity": 0.37606837606837606
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport torch\nimport torch.nn.functional as F\nimport o...",
+      "groundtruth": "sequence[:, -1:], cache, input_mask = mask)",
+      "prediction": "forward_generator = generator.gen_single_position(-1)\n        logits = generator.model.forward(forward_generator, last_id_only = True)",
+      "raw_generation": "```python\nforward_generator = generator.gen_single_position(-1)\n        logits = generator.model.forward(forward_generator, last_id_only = True)\n```",
+      "exact_match": false,
+      "edit_similarity": 0.12686567164179108,
+      "sequence_similarity": 0.13559322033898305
+    },
+    {
+      "prompt": "<|fim_prefix|>from datetime import datetime\nfrom typing import Dict\nimport time\nimport torch\nimport torch.nn as nn\nfrom torch.nn.parallel.distributed import DistributedDataParallel\nimport json\nimport ...",
+      "groundtruth": "dump(opt, f, indent=\"\\t\")",
+      "prediction": "dump(opt, f, indent=4)",
+      "raw_generation": "dump(opt, f, indent=4)",
+      "exact_match": false,
+      "edit_similarity": 0.84,
+      "sequence_similarity": 0.8936170212765957
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom lora import ExLlamaLora\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport argparse\nimport t...",
+      "groundtruth": "gen_begin(ids)",
+      "prediction": "gen_begin_rewind()",
+      "raw_generation": "gen_begin_rewind()",
+      "exact_match": false,
+      "edit_similarity": 0.6666666666666667,
+      "sequence_similarity": 0.75
+    },
+    {
+      "prompt": "<|fim_prefix|>from datetime import datetime\nfrom typing import Dict\nimport time\nimport torch\nimport torch.nn as nn\nfrom torch.nn.parallel.distributed import DistributedDataParallel\nimport json\nimport ...",
+      "groundtruth": "load(f, object_pairs_hook=OrderedDict)  # noqa",
+      "prediction": "load(f)",
+      "raw_generation": "load(f)",
+      "exact_match": false,
+      "edit_similarity": 0.15217391304347827,
+      "sequence_similarity": 0.2641509433962264
+    },
+    {
+      "prompt": "<|fim_prefix|>from __future__ import annotations\n\nimport os\n\nfrom appsignal.__about__ import __version__\nfrom appsignal.config import Config, Options\n\n\ndef test_option():\n    config = Config(Options(a...",
+      "groundtruth": "update(config.sources[\"default\"])",
+      "prediction": "update(config.sources[\"default\"])\n    final_options.update(config.sources[\"environment\"])\n    final_options.update(config.sources[\"initial\"])",
+      "raw_generation": "update(config.sources[\"default\"])\n    final_options.update(config.sources[\"environment\"])\n    final_options.update(config.sources[\"initial\"])",
+      "exact_match": false,
+      "edit_similarity": 0.23404255319148937,
+      "sequence_similarity": 0.3793103448275862
+    },
+    {
+      "prompt": "<|fim_prefix|>from __future__ import annotations\n\nimport os\nimport re\nfrom logging import DEBUG, ERROR, INFO, WARNING\n\nfrom appsignal.agent import agent\nfrom appsignal.client import Client\n\n\ndef test_...",
+      "groundtruth": "active is False",
+      "prediction": "active is True",
+      "raw_generation": "```python\nactive is True\n```",
+      "exact_match": false,
+      "edit_similarity": 0.7333333333333334,
+      "sequence_similarity": 0.7586206896551724
+    },
+    {
+      "prompt": "<|fim_prefix|>from __future__ import annotations\n\nimport os\n\nfrom appsignal.__about__ import __version__\nfrom appsignal.config import Config, Options\n\n\ndef test_option():\n    config = Config(Options(a...",
+      "groundtruth": "options.keys())",
+      "prediction": "sources[\"system\"]) == [\"app_path\"]\n    assert config.option(\"app_path\") == config.sources[\"system\"][\"app_path\"]",
+      "raw_generation": "```python\nsources[\"system\"]) == [\"app_path\"]\n    assert config.option(\"app_path\") == config.sources[\"system\"][\"app_path\"]\n```",
+      "exact_match": false,
+      "edit_similarity": 0.09009009009009006,
+      "sequence_similarity": 0.15873015873015872
+    },
+    {
+      "prompt": "<|fim_prefix|>from __future__ import annotations\n\nimport os\nimport re\nfrom logging import DEBUG, ERROR, INFO, WARNING\n\nfrom appsignal.agent import agent\nfrom appsignal.client import Client\n\n\ndef test_...",
+      "groundtruth": "_logger.getEffectiveLevel() == INFO",
+      "prediction": "_logger.getEffectiveLevel() == INFO\n\n\ndef test_logger_info_level():",
+      "raw_generation": "```python\n_logger.getEffectiveLevel() == INFO\n\n\ndef test_logger_info_level():\n```",
+      "exact_match": false,
+      "edit_similarity": 0.5223880597014925,
+      "sequence_similarity": 0.6862745098039216
+    },
+    {
+      "prompt": "<|fim_prefix|>from __future__ import annotations\n\nimport sys\nfrom argparse import ArgumentParser\nfrom typing import Mapping, NoReturn\n\nfrom .command import AppsignalCLICommand\nfrom .demo import DemoCo...",
+      "groundtruth": "init_parser(subparser)",
+      "prediction": "add_arguments(subparser)",
+      "raw_generation": "add_arguments(subparser)",
+      "exact_match": false,
+      "edit_similarity": 0.5416666666666667,
+      "sequence_similarity": 0.6521739130434783
+    },
+    {
+      "prompt": "<|fim_prefix|>from __future__ import annotations\n\nimport logging\nimport sys\nfrom logging import DEBUG, ERROR, INFO, WARNING, Logger\nfrom typing import TYPE_CHECKING, ClassVar\n\nfrom .agent import agent...",
+      "groundtruth": "option(\"active\"):",
+      "prediction": "active():\n            self._logger = logging.getLogger(\"appsignal\")\n            self._logger.addHandler(logging.NullHandler())\n            return\n\n        self.start()",
+      "raw_generation": "            active():\n            self._logger = logging.getLogger(\"appsignal\")\n            self._logger.addHandler(logging.NullHandler())\n            return\n\n        self.start()",
+      "exact_match": false,
+      "edit_similarity": 0.05988023952095811,
+      "sequence_similarity": 0.08695652173913043
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom lora import ExLlamaLora\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport argparse\nimport t...",
+      "groundtruth": "gen_feed_tokens(in_tokens)",
+      "prediction": "gen_feed(in_tokens)",
+      "raw_generation": "```python\ngen_feed(in_tokens)\n```",
+      "exact_match": false,
+      "edit_similarity": 0.7307692307692308,
+      "sequence_similarity": 0.8444444444444444
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom lora import ExLlamaLora\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport argparse\nimport t...",
+      "groundtruth": "gen_prune_to(config.max_seq_len - expect_tokens - extra_prune, tokenizer.newline_token_id)",
+      "prediction": "prune_synchronize(extra_prune)",
+      "raw_generation": "prune_synchronize(extra_prune)",
+      "exact_match": false,
+      "edit_similarity": 0.25555555555555554,
+      "sequence_similarity": 0.38333333333333336
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom lora import ExLlamaLora\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport argparse\nimport t...",
+      "groundtruth": "gen_num_tokens() >= max_tokens:",
+      "prediction": "gen_seq_len() > max_tokens:",
+      "raw_generation": "```python\ngen_seq_len() > max_tokens:\n```",
+      "exact_match": false,
+      "edit_similarity": 0.7419354838709677,
+      "sequence_similarity": 0.7931034482758621
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom lora import ExLlamaLora\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport argparse\nimport t...",
+      "groundtruth": "disallow_tokens([tokenizer.newline_token_id, tokenizer.eos_token_id])",
+      "prediction": "disallow_tokens(tokenizer.eos_token_id)",
+      "raw_generation": "```python\ndisallow_tokens(tokenizer.eos_token_id)\n```",
+      "exact_match": false,
+      "edit_similarity": 0.5652173913043479,
+      "sequence_similarity": 0.7222222222222222
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom lora import ExLlamaLora\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport argparse\nimport t...",
+      "groundtruth": "decode(generator.sequence_actual[:, -num_res_tokens:][0])",
+      "prediction": "decode(generator.gen_tokens(), start_idx = generator.gen_num_tokens() - num_res_tokens)",
+      "raw_generation": "```python\ndecode(generator.gen_tokens(), start_idx = generator.gen_num_tokens() - num_res_tokens)\n```",
+      "exact_match": false,
+      "edit_similarity": 0.4022988505747126,
+      "sequence_similarity": 0.5416666666666666
+    },
+    {
+      "prompt": "<|fim_prefix|>from model import ExLlama, ExLlamaCache, ExLlamaConfig\nfrom lora import ExLlamaLora\nfrom tokenizer import ExLlamaTokenizer\nfrom generator import ExLlamaGenerator\nimport argparse\nimport t...",
+      "groundtruth": "sequence_actual[:, -num_res_tokens:][0])",
+      "prediction": "gen_tokens(), start_idx = -num_res_tokens)",
+      "raw_generation": "```python\ngen_tokens(), start_idx = -num_res_tokens)\n```",
+      "exact_match": false,
+      "edit_similarity": 0.40476190476190477,
+      "sequence_similarity": 0.5365853658536586
+    },
+    {
+      "prompt": "<|fim_prefix|>import sys\nimport os\nsys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))\nfrom model import ExLlama, ExLlamaConfig\nfrom flask import Flask, render_template, reque...",
+      "groundtruth": "api_populate()",
+      "prediction": "to_json()",
+      "raw_generation": "to_json()",
+      "exact_match": false,
+      "edit_similarity": 0.2142857142857143,
+      "sequence_similarity": 0.2608695652173913
+    },
+    {
+      "prompt": "<|fim_prefix|>import sys\nimport os\nsys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))\nfrom model import ExLlama, ExLlamaConfig\nfrom flask import Flask, render_template, reque...",
+      "groundtruth": "respond_multi(user_input)), mimetype = 'application/json')",
+      "prediction": "api_userinput(user_input))), mimetype='text/plain')",
+      "raw_generation": "api_userinput(user_input))), mimetype='text/plain')",
+      "exact_match": false,
+      "edit_similarity": 0.48275862068965514,
+      "sequence_similarity": 0.6238532110091743
+    },
+    {
+      "prompt": "<|fim_prefix|>import sys\nimport os\nsys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))\nfrom model import ExLlama, ExLlamaConfig\nfrom flask import Flask, render_template, reque...",
+      "groundtruth": "print_options(args)",
+      "prediction": "model_init.init()",
+      "raw_generation": "model_init.init()",
+      "exact_match": false,
+      "edit_similarity": 0.1578947368421053,
+      "sequence_similarity": 0.3333333333333333
+    },
+    {
+      "prompt": "<|fim_prefix|>import os\nimport logging\nfrom whatsapp import WhatsApp, Message\nfrom dotenv import load_dotenv\nfrom flask import Flask, request, Response\n\n# Initialize Flask App\napp = Flask(__name__)\n\n#...",
+      "groundtruth": "get_delivery(data)",
+      "prediction": "delivery(data)\n            if delivery:\n                logging.info(f\"Message : {delivery}\")\n            else:\n                logging.info(\"No new message\")\n    return \"OK\", 200",
+      "raw_generation": "delivery(data)\n            if delivery:\n                logging.info(f\"Message : {delivery}\")\n            else:\n                logging.info(\"No new message\")\n    return \"OK\", 200",
+      "exact_match": false,
+      "edit_similarity": 0.07821229050279332,
+      "sequence_similarity": 0.14213197969543148
+    },
+    {
+      "prompt": "<|fim_prefix|>from whatsapp import Message, Hook, WhatsApp\nfrom flask import Response\nfrom os import getenv\nfrom dotenv import load_dotenv\n\n\ndef handler(msg: Message):\n    message_type = msg.type\n    ...",
+      "groundtruth": "run()",
+      "prediction": "run()",
+      "raw_generation": "run()",
+      "exact_match": true,
+      "edit_similarity": 1.0,
+      "sequence_similarity": 1.0
+    },
+    {
+      "prompt": "<|fim_prefix|>#!/usr/bin/env python\n\nimport pytorch_lightning as pl\n\nimport sys\nimport os\nsys.path.append(os.path.join(os.path.dirname(__file__), \"../data\"))\nsys.path.append(os.path.join(os.path.dirna...",
+      "groundtruth": "load_from_checkpoint(CKPT_PATH)",
+      "prediction": ".load_from_checkpoint(CKPT_PATH)",
+      "raw_generation": ".load_from_checkpoint(CKPT_PATH)",
+      "exact_match": false,
+      "edit_similarity": 0.96875,
+      "sequence_similarity": 0.9841269841269841
+    },
+    {
+      "prompt": "<|fim_prefix|>import numpy as np\nimport unittest\nfrom hypothesis import given\nfrom tests.strategies import objects, adapted_function, finite_functions, permutations, parallel_permutations, parallel_ar...",
+      "groundtruth": "cointerleave(n)",
+      "prediction": "interleave(n).dagger()\n\n    i = FiniteFunction.identity(2*n)\n\n    assert a >> b == i\n    assert b >> a == i",
+      "raw_generation": "interleave(n).dagger()\n\n    i = FiniteFunction.identity(2*n)\n\n    assert a >> b == i\n    assert b >> a == i",
+      "exact_match": false,
+      "edit_similarity": 0.10280373831775702,
+      "sequence_similarity": 0.21311475409836064
+    },
+    {
+      "prompt": "<|fim_prefix|>import numpy as np\nimport unittest\nfrom hypothesis import given\nfrom tests.strategies import objects, adapted_function, finite_functions, permutations, parallel_permutations, parallel_ar...",
+      "groundtruth": "interleave(n)",
+      "prediction": "interleave(n)\n    b = FiniteFunction.cointerleave(n)\n    i = FiniteFunction.identity(2*n)\n\n    assert a >> b == i\n    assert b >> a == i",
+      "raw_generation": "interleave(n)\n    b = FiniteFunction.cointerleave(n)\n    i = FiniteFunction.identity(2*n)\n\n    assert a >> b == i\n    assert b >> a == i",
+      "exact_match": false,
+      "edit_similarity": 0.09558823529411764,
+      "sequence_similarity": 0.174496644295302
+    },
+    {
+      "prompt": "<|fim_prefix|>\"\"\"\n__project__ = 'holoinsight-ai'\n__file_name__ = 'run_detector'\n__author__ = 'LuYuan'\n__time__ = '2023/2/1 16:25'\n__info__ =\n\"\"\"\nfrom common.classes import Request4AD\nfrom common.reque...",
+      "groundtruth": "build_req()",
+      "prediction": "build_request()",
+      "raw_generation": "build_request()",
+      "exact_match": false,
+      "edit_similarity": 0.7333333333333334,
+      "sequence_similarity": 0.8461538461538461
+    },
+    {
+      "prompt": "<|fim_prefix|>\"\"\"\n__project__ = 'holoinsight-ai'\n__file_name__ = 'outlier_detector'\n__author__ = 'LuYuan'\n__time__ = '2023/4/13 15:43'\n__info__ =\n\"\"\"\nfrom typing import List\n\nfrom common.constants imp...",
+      "groundtruth": "agg_diff_fe_calc(self.detect_data, self.anomaly_duration)",
+      "prediction": "aggregate_with_sliding_window(self.detect_data, window_size=self.anomaly_duration)",
+      "raw_generation": "aggregate_with_sliding_window(self.detect_data, window_size=self.anomaly_duration)\n       ",
+      "exact_match": false,
+      "edit_similarity": 0.5853658536585367,
+      "sequence_similarity": 0.6762589928057554
+    },
+    {
+      "prompt": "<|fim_prefix|>\"\"\"\n__project__ = 'holoinsight-ai'\n__file_name__ = 'anomaly_detector'\n__author__ = 'LuYuan'\n__time__ = '2023/4/17 13:35'\n__info__ =\n\"\"\"\nfrom typing import List, Dict\n\nfrom algorithm.dyn_...",
+      "groundtruth": "diff_percentile_func(self.detect_data, int(k), is_down)[-1]",
+      "prediction": "get_last_value_of_series(self.detect_data) if k == Constants.LATEST_TREND.value else v\n                target_th = ThresholdCalc(v).run()\n                if cur_fe < target_th:\n                    return True\n        else:\n            target_th = ThresholdCalc(features).run()\n            if self.detect_data[-1] < target_th:\n                return True\n        return False",
+      "raw_generation": "get_last_value_of_series(self.detect_data) if k == Constants.LATEST_TREND.value else v\n                target_th = ThresholdCalc(v).run()\n                if cur_fe < target_th:\n                    return True\n        else:\n            target_th = ThresholdCalc(features).run()\n            if self.detect_data[-1] < target_th:\n                return True\n        return False",
+      "exact_match": false,
+      "edit_similarity": 0.09893048128342241,
+      "sequence_similarity": 0.17551963048498845
+    },
+    {
+      "prompt": "<|fim_prefix|>\"\"\"\n__project__ = 'holoinsight-ai'\n__file_name__ = 'outlier_detector'\n__author__ = 'LuYuan'\n__time__ = '2023/4/13 15:43'\n__info__ =\n\"\"\"\nimport numpy as np\n\nfrom typing import List\n\nfrom ...",
+      "groundtruth": "diff_feature_calc(detect_data, self.default_point)",
+      "prediction": "diff(detect_data)\n        if len(detect_data_diff) == 0:\n            return [], 0.0\n        detect_data_diff = [0.0] + detect_data_diff\n        detect_data_diff = detect_data_diff[-self.alarm_last_time:]",
+      "raw_generation": "diff(detect_data)\n        if len(detect_data_diff) == 0:\n            return [], 0.0\n        detect_data_diff = [0.0] + detect_data_diff\n        detect_data_diff = detect_data_diff[-self.alarm_last_time:]",
+      "exact_match": false,
+      "edit_similarity": 0.1724137931034483,
+      "sequence_similarity": 0.22134387351778656
+    },
+    {
+      "prompt": "<|fim_prefix|>\"\"\"\n__project__ = 'holoinsight-ai'\n__file_name__ = 'outlier_detector'\n__author__ = 'LuYuan'\n__time__ = '2023/4/13 15:43'\n__info__ =\n\"\"\"\nimport numpy as np\n\nfrom typing import List\n\nfrom ...",
+      "groundtruth": "turkey_box_plot(detect_data_diff, self.tk_delta)[3]",
+      "prediction": "median_threshold(detect_data_diff, self.tk_delta)\n        cp_indexes = []\n        for index, value in enumerate(detect_data_diff):\n            if value < down_threshold:\n                cp_indexes.append(index)\n        cp_indexes = [c_i for c_i in cp_indexes if c_i > len(detect_data) - self.alarm_last_time]\n        return cp_indexes, down_threshold",
+      "raw_generation": "median_threshold(detect_data_diff, self.tk_delta)\n        cp_indexes = []\n        for index, value in enumerate(detect_data_diff):\n            if value < down_threshold:\n                cp_indexes.append(index)\n        cp_indexes = [c_i for c_i in cp_indexes if c_i > len(detect_data) - self.alarm_last_time]\n        return cp_indexes, down_threshold",
+      "exact_match": false,
+      "edit_similarity": 0.10857142857142854,
+      "sequence_similarity": 0.18952618453865336
+    },
+    {
+      "prompt": "<|fim_prefix|>\"\"\"\n__project__ = 'holoinsight-ai'\n__file_name__ = 'threshold'\n__author__ = 'LuYuan'\n__time__ = '2023/4/16 19:27'\n__info__ =\n\"\"\"\nfrom typing import List, Dict\n\nimport pandas as pd\nimport...",
+      "groundtruth": "turkey_box_plot([freq[k] for k in search_range])[4]",
+      "prediction": "max([freq[k] for k in search_range]) * 0.5\n        if len(search_range) == 0:\n            return -1\n        up_threshold = max(1 / 3 * max([freq[k] for k in search_range]), up_threshold)",
+      "raw_generation": "max([freq[k] for k in search_range]) * 0.5\n        if len(search_range) == 0:\n            return -1\n        up_threshold = max(1 / 3 * max([freq[k] for k in search_range]), up_threshold)",
+      "exact_match": false,
+      "edit_similarity": 0.21505376344086025,
+      "sequence_similarity": 0.3037974683544304
+    },
+    {
+      "prompt": "<|fim_prefix|>\nimport requests\nimport urllib.request\nfrom unittest import TestCase\nimport datadiligence as dd\nfrom datadiligence.rules import TDMRepHeader\nimport time\n\n# starting local server to echo ...",
+      "groundtruth": "exceptions.TDMRepNoParam, self.rule.is_allowed, None, None)",
+      "prediction": "exceptions.HttpUnknownHeaderObject, self.rule.get_header_value, None, None)\n        self.assertRaises(dd.exceptions.HttpUnknownResponseObject, self.rule.get_header_value_from_response, None, None)",
+      "raw_generation": "exceptions.HttpUnknownHeaderObject, self.rule.get_header_value, None, None)\n        self.assertRaises(dd.exceptions.HttpUnknownResponseObject, self.rule.get_header_value_from_response, None, None)",
+      "exact_match": false,
+      "edit_similarity": 0.23979591836734693,
+      "sequence_similarity": 0.34509803921568627
+    },
+    {
+      "prompt": "<|fim_prefix|>\"\"\"\nRules to manage validation using HTTP properties\n\"\"\"\n\nfrom ..exceptions import XRobotsTagNoParam, TDMRepNoParam\nfrom .base import HttpRule\n\n\nclass XRobotsTagHeader(HttpRule):\n    \"\"\"...",
+      "groundtruth": "get_header_value(headers, self.HEADER_NAME)",
+      "prediction": "get_header_value(headers, self.HEADER_NAME)",
+      "raw_generation": "get_header_value(headers, self.HEADER_NAME)",
+      "exact_match": true,
+      "edit_similarity": 1.0,
+      "sequence_similarity": 1.0
+    },
+    {
+      "prompt": "<|fim_prefix|>\"\"\"\nRules to manage validation using HTTP properties\n\"\"\"\n\nfrom ..exceptions import XRobotsTagNoParam, TDMRepNoParam\nfrom .base import HttpRule\n\n\nclass XRobotsTagHeader(HttpRule):\n    \"\"\"...",
+      "groundtruth": "get_header_value_from_response(response, self.HEADER_NAME)",
+      "prediction": "get_header_value_from_response(response, self.HEADER_NAME)",
+      "raw_generation": "```python\nget_header_value_from_response(response, self.HEADER_NAME)\n```",
+      "exact_match": true,
+      "edit_similarity": 1.0,
+      "sequence_similarity": 1.0
+    },
+    {
+      "prompt": "<|fim_prefix|>\nimport requests\nimport urllib.request\nfrom unittest import TestCase\nimport datadiligence as dd\nfrom datadiligence.rules import XRobotsTagHeader\nimport time\n\n# starting local server to e...",
+      "groundtruth": "HEADER_NAME), \"noai\")",
+      "prediction": "HEADER_NAME), \"noai\")",
+      "raw_generation": "HEADER_NAME), \"noai\")",
+      "exact_match": true,
+      "edit_similarity": 1.0,
+      "sequence_similarity": 1.0
+    }
+  ]
+}

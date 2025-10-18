@@ -1,0 +1,364 @@
+{
+  "metrics": {
+    "pass@1": 0.0,
+    "edit_similarity": 0.0,
+    "exact_match": 0.0,
+    "balanced_score": 0.0,
+    "total_samples": 50,
+    "passes": 0,
+    "temperature": 0.2,
+    "max_tokens": 48
+  },
+  "results": [
+    {
+      "index": 0,
+      "error": "RetryError[<Future at 0x10cb325d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 1,
+      "error": "RetryError[<Future at 0x10cb3b9b0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 2,
+      "error": "RetryError[<Future at 0x10cb90850 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 3,
+      "error": "RetryError[<Future at 0x10cba65d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 4,
+      "error": "RetryError[<Future at 0x10cb2a750 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 5,
+      "error": "RetryError[<Future at 0x10cb609f0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 6,
+      "error": "RetryError[<Future at 0x10cbbd090 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 7,
+      "error": "RetryError[<Future at 0x10cbdbdd0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 8,
+      "error": "RetryError[<Future at 0x10cbda1d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 9,
+      "error": "RetryError[<Future at 0x10cbd9e50 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 10,
+      "error": "RetryError[<Future at 0x10cbd9ad0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 11,
+      "error": "RetryError[<Future at 0x10cbd8350 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 12,
+      "error": "RetryError[<Future at 0x10cbdb0d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 13,
+      "error": "RetryError[<Future at 0x10cbd9c50 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 14,
+      "error": "RetryError[<Future at 0x10cbf12d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 15,
+      "error": "RetryError[<Future at 0x10cbf2450 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 16,
+      "error": "RetryError[<Future at 0x10cbf33d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 17,
+      "error": "RetryError[<Future at 0x10cbf3ed0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 18,
+      "error": "RetryError[<Future at 0x10cbf2850 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 19,
+      "error": "RetryError[<Future at 0x10cbf2e50 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 20,
+      "error": "RetryError[<Future at 0x10cbf1150 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 21,
+      "error": "RetryError[<Future at 0x10cbf25d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 22,
+      "error": "RetryError[<Future at 0x10cbf2d50 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 23,
+      "error": "RetryError[<Future at 0x10cbf10d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 24,
+      "error": "RetryError[<Future at 0x10cbf0850 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 25,
+      "error": "RetryError[<Future at 0x10cbf05d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 26,
+      "error": "RetryError[<Future at 0x10cbf1e50 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 27,
+      "error": "RetryError[<Future at 0x10cbf0650 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 28,
+      "error": "RetryError[<Future at 0x10cb9dcd0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 29,
+      "error": "RetryError[<Future at 0x10cb9e150 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 30,
+      "error": "RetryError[<Future at 0x10cb9edd0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 31,
+      "error": "RetryError[<Future at 0x10cbd8850 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 32,
+      "error": "RetryError[<Future at 0x10cbd9a50 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 33,
+      "error": "RetryError[<Future at 0x10cbda0d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 34,
+      "error": "RetryError[<Future at 0x10cbfb6d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 35,
+      "error": "RetryError[<Future at 0x10cbfa3d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 36,
+      "error": "RetryError[<Future at 0x10cbf8c50 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 37,
+      "error": "RetryError[<Future at 0x10cbf9fd0 state=finished raised ReadTimeout>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 38,
+      "error": "RetryError[<Future at 0x10cbfa5d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 39,
+      "error": "RetryError[<Future at 0x10cbfa9d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 40,
+      "error": "RetryError[<Future at 0x10cbf86d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 41,
+      "error": "RetryError[<Future at 0x10cbda7d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 42,
+      "error": "RetryError[<Future at 0x10cb9d450 state=finished raised ReadTimeout>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 43,
+      "error": "RetryError[<Future at 0x10cb9e4d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 44,
+      "error": "RetryError[<Future at 0x10cb9fc50 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 45,
+      "error": "RetryError[<Future at 0x10cbf1650 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 46,
+      "error": "RetryError[<Future at 0x10cbfa0d0 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 47,
+      "error": "RetryError[<Future at 0x10cbf3250 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 48,
+      "error": "RetryError[<Future at 0x10cbd9a50 state=finished raised HTTPError>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 49,
+      "error": "RetryError[<Future at 0x10cc161d0 state=finished raised ReadTimeout>]",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    }
+  ]
+}

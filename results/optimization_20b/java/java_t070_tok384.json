@@ -1,0 +1,414 @@
+{
+  "metrics": {
+    "pass@1": 0.1,
+    "edit_similarity": 0.41571034103648524,
+    "exact_match": 0.1,
+    "balanced_score": 0.39189669919486314,
+    "total_samples": 50,
+    "passes": 5,
+    "temperature": 0.7,
+    "max_tokens": 384
+  },
+  "results": [
+    {
+      "index": 0,
+      "groundtruth": "int startAngle = ((Arc) object).getStartAngle();",
+      "prediction": "int startAngle = ((Arc) object).getStartAngle();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 1,
+      "groundtruth": "((Line) object).getColor());",
+      "prediction": "((Line) object).get",
+      "es": 0.6785714285714286,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 2,
+      "groundtruth": "(Arc) object).getStopAngle();",
+      "prediction": "int stopAngle = ((Arc) object).getStopAngle();",
+      "es": 0.6304347826086957,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 3,
+      "groundtruth": "server.blockUntilShutdown();",
+      "prediction": "We need to complete the missing code for ProcessB main m",
+      "es": 0.1428571428571429,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 4,
+      "groundtruth": "HttpClientUtil.sendGetRequest();",
+      "prediction": "RocketMqClients.CreatePushConsumer(messageView -> {",
+      "es": 0.2549019607843137,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 5,
+      "groundtruth": "GreetingClient.start();",
+      "prediction": "GreetingClient client = new GreetingClient();",
+      "es": 0.4444444444444444,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 6,
+      "groundtruth": "RocketMqClients.CreatePushConsumer(messageView -> {",
+      "prediction": "We need to fill missing code in main. Let's analyze context. ProcessC class",
+      "es": 0.17333333333333334,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 7,
+      "groundtruth": "Producer producer = RocketMqClients.CreateProducer();",
+      "prediction": "Producer producer = RocketMqClients.getProducer();",
+      "es": 0.9245283018867925,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 8,
+      "groundtruth": "systemMessage.setContent(systemprompt);",
+      "prediction": "systemMessage.setContent(systemprompt);",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 9,
+      "groundtruth": "\"Contador de tokens: %d\",gptService.getNumTokens());",
+      "prediction": "private void printUsage(Update update) {",
+      "es": 0.17307692307692313,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 10,
+      "groundtruth": "chatRequest.setMaxTokens(maxtokens);",
+      "prediction": "// Compose new request",
+      "es": 0.13888888888888884,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 11,
+      "groundtruth": "chatRequest.setModel(model);",
+      "prediction": "chatRequest.setModel(model);",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 12,
+      "groundtruth": "systemMessage.setRole(\"system\");",
+      "prediction": "`\". That indicates missing code. Let's look at the context.",
+      "es": 0.2033898305084746,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 13,
+      "groundtruth": "userMessage.setContent(this.presentation);",
+      "prediction": "userMessage.setContent(text);",
+      "es": 0.6666666666666667,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 14,
+      "groundtruth": "exampleMessage.setRole(role.toLowerCase());",
+      "prediction": "private ArrayList<Message> getExamples(ArrayList<String> examples) {",
+      "es": 0.27941176470588236,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 15,
+      "groundtruth": "AccUtils.printLogMsg(\"\u63d0\u53d6\u5230\u7684\u7b2c\u4e00\u4e2a\u6574\u6570\u662f\uff1a\" + i);",
+      "prediction": "public static int extractFirstIntFromString(String str){",
+      "es": 0.1428571428571429,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 16,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");",
+      "prediction": "AccUtils.startApplication(Variable.context, \"com.alibaba.and",
+      "es": 0.23333333333333328,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 17,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5f00\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");",
+      "es": 0.8709677419354839,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 18,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6253\u5f00\u9489\u9489\");",
+      "prediction": "@RequiresApi(24)",
+      "es": 0.1724137931034483,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 19,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u6253\u5361\");",
+      "prediction": "//Rect(425, 1280 - 656, 1362); packageName: com.alibaba.an",
+      "es": 0.051724137931034475,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 20,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u6682\u65f6\u4e0d\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u597d\u7684\");",
+      "es": 0.9,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 21,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6807\u9898 => \" + videoDesc);",
+      "prediction": "String videoDesc = currentVideoDesc();",
+      "es": 0.32558139534883723,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 22,
+      "groundtruth": "AccUtils.printLogMsg(\"\u8fd4\u56de\u5230\u521d\u59cb\u72b6\u6001\");",
+      "prediction": "AccUtils.moveFloatWindow(\"\u6253\u5f00\");",
+      "es": 0.40625,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 23,
+      "groundtruth": "AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");",
+      "es": 0.296875,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 24,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u597d\u7684\");",
+      "prediction": "AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u8003",
+      "es": 0.22413793103448276,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 25,
+      "groundtruth": "dyTaskService.main();",
+      "prediction": "dyTaskService.main();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 26,
+      "groundtruth": "AccUtils.printLogMsg(\"\u5411\u4e0b\u6ed1\u52a8\");",
+      "prediction": "String videoDesc = currentVideoDesc();",
+      "es": 0.10526315789473684,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 27,
+      "groundtruth": "= AccUtils.findElementListByContainText(\"\u6253\u5361\");",
+      "prediction": "//Rect(425, 1280 - 656, 1362); packageName: com.alibaba.android.rimet; className: android.vi",
+      "es": 0.09782608695652173,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 28,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6253\u5361\u5b8c\u6210\uff0c\u8fd4\u56de\u684c\u9762\");",
+      "prediction": "AccUtils.back();",
+      "es": 0.3529411764705882,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 29,
+      "groundtruth": "TinkerManager.setUpgradeRetryEnable(true);",
+      "prediction": "MultiDex.install(base);",
+      "es": 0.2142857142857143,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 30,
+      "groundtruth": "AccUtils.findElementByText(\"\u8003\u52e4\u6253\u5361\"));",
+      "prediction": "\". Let's check context. The code before cursor:",
+      "es": 0.1063829787234043,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 31,
+      "groundtruth": "TinkerManager.installTinker(this);",
+      "prediction": "@Override",
+      "es": 0.1470588235294118,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 32,
+      "groundtruth": "= AccUtils.findElementByText(\"\u6211\u77e5\u9053\u4e86\");",
+      "prediction": "Looks truncated. We need to find missing code: likely something like `elem",
+      "es": 0.14864864864864868,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 33,
+      "groundtruth": "element = AccUtils.findElementByText(\"\u4ee5\u540e\u518d\u8bf4\");",
+      "prediction": "AccessibilityNodeInfo elementByText = AccUtils.findElementByText(\"\u6211\u77e5\u9053\u4e86\");",
+      "es": 0.5616438356164384,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 34,
+      "groundtruth": "AccUtils.printLogMsg(\"open dy App\");",
+      "prediction": "private void runTask() throws ExitException {",
+      "es": 0.11111111111111116,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 35,
+      "groundtruth": "AccUtils.openApp(\"\u6296\u97f3\");",
+      "prediction": "AccUtils.moveFloatWindow(\"\u6253\u5f00\");",
+      "es": 0.5483870967741935,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 36,
+      "groundtruth": "TinkerManager.setTinkerApplicationLike(this);",
+      "prediction": "MultiDex.install(base);",
+      "es": 0.19999999999999996,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 37,
+      "groundtruth": "Utils.isBackground()) {",
+      "prediction": "if (checkIfNeedKill(result)) {",
+      "es": 0.19999999999999996,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 38,
+      "groundtruth": "AccUtils.printLogMsg(\"\u5728\u5b57\u7b26\u4e32\u4e2d\u6ca1\u6709\u627e\u5230\u6574\u6570\uff01\");",
+      "prediction": "AccUtils.printLogMsg(\"\u672a\u627e\u5230\u6574\u6570\");",
+      "es": 0.7837837837837838,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 39,
+      "groundtruth": "WindowPermissionCheck.checkPermission(this);",
+      "prediction": "boolean permission = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && Settings.canDrawO",
+      "es": 0.15909090909090906,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 40,
+      "groundtruth": "AccUtils.timeSleep(3000);",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");",
+      "es": 0.43333333333333335,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 41,
+      "groundtruth": "AccUtils.timeSleep(6000);",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u597d\u7684\");",
+      "es": 0.4482758620689655,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 42,
+      "groundtruth": "AccUtils.timeSleep(2000);",
+      "prediction": "AccUtils.printLogMsg(\"\u8fd4\u56de\u5230\u521d\u59cb\u72b6\u6001\");",
+      "es": 0.40625,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 43,
+      "groundtruth": "AccUtils.timeSleep(7000);",
+      "prediction": "AccUtils.startApplication(Variable.context, \"com.a",
+      "es": 0.28,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 44,
+      "groundtruth": "returnCode = Utils.checkForPatchRecover(NEW_PATCH_RESTRICTION_SPACE_SIZE_MIN, maxMemory);",
+      "prediction": "if (returnCode == ShareConstants.ERROR_PATCH_OK) {",
+      "es": 0.2247191011235955,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 45,
+      "groundtruth": "ntokens = ntokens + response.getUsage().getTotalTokens();",
+      "prediction": "ntokens = ntokens + response.getUsage().getTotalTokens();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 46,
+      "groundtruth": ".setContent(response.getChoices().get(0).getMessage().getContent());",
+      "prediction": "assistantMessage.setContent(response.getChoices().get(0).getMessage().getContent());",
+      "es": 0.8095238095238095,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 47,
+      "groundtruth": "out.println(filme.getNome()+\" - \"+filme.getDuracao());",
+      "prediction": "System.out.println(\"Play film: \" + filme.getNome() + \", dura\u00e7\u00e3o: \" + filme.getDur",
+      "es": 0.45679012345679015,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 48,
+      "groundtruth": "itempedido.getPreco();",
+      "prediction": "public float getTotalPedido(){",
+      "es": 0.2666666666666667,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 49,
+      "groundtruth": "= meuDVD.removerFilme();",
+      "prediction": "meuDVD.inserirFilme(filmeDevolvido);",
+      "es": 0.38888888888888884,
+      "em": false,
+      "passed": false
+    }
+  ]
+}

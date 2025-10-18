@@ -1,0 +1,414 @@
+{
+  "metrics": {
+    "pass@1": 0.12,
+    "edit_similarity": 0.35611634550041993,
+    "exact_match": 0.12,
+    "balanced_score": 0.4023064848703298,
+    "total_samples": 50,
+    "passes": 6,
+    "temperature": 0.6,
+    "max_tokens": 512
+  },
+  "results": [
+    {
+      "index": 0,
+      "groundtruth": "sequence_actual[:, -max_stop_string:])[0]",
+      "prediction": "old_tail =",
+      "es": 0.09756097560975607,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 1,
+      "groundtruth": "gen_accept_token(batch_token)",
+      "prediction": "We need to fill the missing code inside generate_cfg",
+      "es": 0.13461538461538458,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 2,
+      "groundtruth": "settings.token_repetition_penalty_max = 1.176",
+      "prediction": "generator.settings.token_repetition_penalty_max = 1.0",
+      "es": 0.7547169811320755,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 3,
+      "groundtruth": "decode(prompt_ids)[0]",
+      "prediction": "full_prompt = prompt",
+      "es": 0.23809523809523814,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 4,
+      "groundtruth": "gen_begin_reuse(input_ids)",
+      "prediction": "generator.gen_init(prompt_ids)",
+      "es": 0.4,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 5,
+      "groundtruth": "encode(prompts, return_mask = True)",
+      "prediction": "ids, mask = tokenizer.",
+      "es": 0.19999999999999996,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 6,
+      "groundtruth": "decode(generator.sequence[0])",
+      "prediction": "output = tokenizer.decode(generator.sequence[0], ski",
+      "es": 0.5384615384615384,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 7,
+      "groundtruth": "calculate_rotary_embedding_base()",
+      "prediction": "if args.flash_attn:",
+      "es": 0.12121212121212122,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 8,
+      "groundtruth": "generate_simple(prompts, max_new_tokens = 200)",
+      "prediction": "We need to fill generator. generate method. Likely generator.generate(prompt, leng",
+      "es": 0.2195121951219512,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 9,
+      "groundtruth": "set_auto_map(args.gpu_split)",
+      "prediction": "config = ExLlamaConfig(args.config)",
+      "es": 0.19999999999999996,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 10,
+      "groundtruth": "forward(generator.sequence[:, -1:], cache, input_mask = mask)",
+      "prediction": "def generate_cfg(prompts, alpha, max_new_tokens):",
+      "es": 0.24590163934426235,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 11,
+      "groundtruth": "enter(\"b\") == ConfigRoute(\"a.b\")",
+      "prediction": "We need to fill missing code between prefix and suffix. T",
+      "es": 0.17543859649122806,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 12,
+      "groundtruth": "dispatch(cls) is export_model_async:",
+      "prediction": "export_model.register(cls, func)",
+      "es": 0.16666666666666663,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 13,
+      "groundtruth": "compile(to_compile=to_compile)",
+      "prediction": "import argparse",
+      "es": 0.16666666666666663,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 14,
+      "groundtruth": "set_auto_map('17.615,18.8897')",
+      "prediction": "We need to fill missing code between prefix and suffix",
+      "es": 0.07407407407407407,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 15,
+      "groundtruth": "sample_current(logits_mixed)",
+      "prediction": "sampled_token, _ = generator.sample(logits_mixed)",
+      "es": 0.4897959183673469,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 16,
+      "groundtruth": "sequence[:, -1:], cache, input_mask = mask)",
+      "prediction": "We need to fill in the missing code inside the generate_cfg function, specifi",
+      "es": 0.1558441558441559,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 17,
+      "groundtruth": "dump(opt, f, indent=\"\\t\")",
+      "prediction": "json.dump(opt, f, indent=4)",
+      "es": 0.6666666666666667,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 18,
+      "groundtruth": "gen_begin(ids)",
+      "prediction": "generator.lora = lora",
+      "es": 0.1428571428571429,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 19,
+      "groundtruth": "load(f, object_pairs_hook=OrderedDict)  # noqa",
+      "prediction": "opt = json.load(f)",
+      "es": 0.15217391304347827,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 20,
+      "groundtruth": "update(config.sources[\"default\"])",
+      "prediction": "final_options.update(config.sources[\"default\"])",
+      "es": 0.7021276595744681,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 21,
+      "groundtruth": "active is False",
+      "prediction": "active is False",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 22,
+      "groundtruth": "options.keys())",
+      "prediction": "We need to fill missing cod",
+      "es": 0.11111111111111116,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 23,
+      "groundtruth": "_logger.getEffectiveLevel() == INFO",
+      "prediction": "_logger.getEffectiveLevel() == INFO",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 24,
+      "groundtruth": "init_parser(subparser)",
+      "prediction": "cmd_class.add_arguments(subparser)",
+      "es": 0.4117647058823529,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 25,
+      "groundtruth": "option(\"active\"):",
+      "prediction": "class Client:",
+      "es": 0.17647058823529416,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 26,
+      "groundtruth": "gen_feed_tokens(in_tokens)",
+      "prediction": "generator.gen_input(in_tokens)",
+      "es": 0.5333333333333333,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 27,
+      "groundtruth": "gen_prune_to(config.max_seq_len - expect_tokens - extra_prune, tokenizer.newline_token_id)",
+      "prediction": "We need to fill missing code: after checking if generator.gen_num_tokens() >= max_tokens: prune context. The code currently stops at generator. ```. W",
+      "es": 0.24,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 28,
+      "groundtruth": "gen_num_tokens() >= max_tokens:",
+      "prediction": "expect_tokens = in_tokens.shape[-1] + max_response_toke",
+      "es": 0.3090909090909091,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 29,
+      "groundtruth": "disallow_tokens([tokenizer.newline_token_id, tokenizer.eos_token_id])",
+      "prediction": "generator.disallow_tokens([tokenizer.eos_token_id, tokenizer.new",
+      "es": 0.5797101449275363,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 30,
+      "groundtruth": "decode(generator.sequence_actual[:, -num_res_tokens:][0])",
+      "prediction": "text = tokenizer.",
+      "es": 0.1578947368421053,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 31,
+      "groundtruth": "sequence_actual[:, -num_res_tokens:][0])",
+      "prediction": "We need to fill missing code: after \"text = tokenizer.decode(generator.\"",
+      "es": 0.18055555555555558,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 32,
+      "groundtruth": "api_populate()",
+      "prediction": "@app.route(\"/api/populate",
+      "es": 0.36,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 33,
+      "groundtruth": "respond_multi(user_input)), mimetype = 'application/json')",
+      "prediction": "api_userinput(user_input))",
+      "es": 0.2586206896551724,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 34,
+      "groundtruth": "print_options(args)",
+      "prediction": "model_init.add_args(parser)",
+      "es": 0.2962962962962963,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 35,
+      "groundtruth": "get_delivery(data)",
+      "prediction": "else:",
+      "es": 0.16666666666666663,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 36,
+      "groundtruth": "run()",
+      "prediction": "We need t",
+      "es": 0.11111111111111116,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 37,
+      "groundtruth": "load_from_checkpoint(CKPT_PATH)",
+      "prediction": "load_from_checkpoint(CKPT_PATH)",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 38,
+      "groundtruth": "cointerleave(n)",
+      "prediction": "We need to fill in the miss",
+      "es": 0.14814814814814814,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 39,
+      "groundtruth": "interleave(n)",
+      "prediction": "We need to fill in miss",
+      "es": 0.13043478260869568,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 40,
+      "groundtruth": "build_req()",
+      "prediction": ".build()",
+      "es": 0.5454545454545454,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 41,
+      "groundtruth": "agg_diff_fe_calc(self.detect_data, self.anomaly_duration)",
+      "prediction": "We need to fill agg_list = Utils.??? The code uses Utils.agg_list? Let's inspect context. The class Si",
+      "es": 0.17647058823529416,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 42,
+      "groundtruth": "diff_percentile_func(self.detect_data, int(k), is_down)[-1]",
+      "prediction": ". We need to fill it. The pattern: cur_fe = Utils.",
+      "es": 0.13559322033898302,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 43,
+      "groundtruth": "diff_feature_calc(detect_data, self.default_point)",
+      "prediction": "We need to fill the missing code: `detect_data_diff = Utils().```. There's a missing metho",
+      "es": 0.24444444444444446,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 44,
+      "groundtruth": "turkey_box_plot(detect_data_diff, self.tk_delta)[3]",
+      "prediction": "We need to fill missing code: In prev_diff_outlier, after computing detect_data_diff, down_",
+      "es": 0.19780219780219777,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 45,
+      "groundtruth": "turkey_box_plot([freq[k] for k in search_range])[4]",
+      "prediction": "up_threshold = Utils.",
+      "es": 0.1568627450980392,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 46,
+      "groundtruth": "exceptions.TDMRepNoParam, self.rule.is_allowed, None, None)",
+      "prediction": "def test_exceptions(self):",
+      "es": 0.13559322033898302,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 47,
+      "groundtruth": "get_header_value(headers, self.HEADER_NAME)",
+      "prediction": "get_header_value(headers, self.HEADER_NAME)",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 48,
+      "groundtruth": "get_header_value_from_response(response, self.HEADER_NAME)",
+      "prediction": "get_header_value_from_response(response, self.HEADER_NAME)",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 49,
+      "groundtruth": "HEADER_NAME), \"noai\")",
+      "prediction": "HEADER_NAME), \"noai\")",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    }
+  ]
+}
