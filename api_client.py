@@ -5,17 +5,31 @@ from tenacity import retry, stop_after_attempt, wait_exponential
 
 
 class ModelAPIClient:
-    """Client for interacting with the Qwen/Qwen2.5-Coder-3B model API."""
+    """Client for interacting with Qwen/Qwen2.5-Coder models."""
 
     def __init__(
         self,
-        base_url: str = "http://195.201.127.59/v1/completions",
-        api_key: str = "zen8labs",
-        model: str = "Qwen/Qwen2.5-Coder-3B"
+        model_size: str = "3b",
+        config_path: str = "config.json"
     ):
-        self.base_url = base_url
-        self.api_key = api_key
-        self.model = model
+        """
+        Initialize API client with specified model size.
+
+        Args:
+            model_size: Model size to use ("3b", "7b", or "14b")
+            config_path: Path to configuration file
+        """
+        with open(config_path, 'r') as f:
+            config = json.load(f)
+
+        if model_size not in config["models"]:
+            raise ValueError(f"Model size '{model_size}' not found in config. Available: {list(config['models'].keys())}")
+
+        model_config = config["models"][model_size]
+        self.base_url = model_config["api_base"]
+        self.api_key = model_config["api_key"]
+        self.model = model_config["name"]
+        self.model_size = model_size
 
     @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
     def generate(
