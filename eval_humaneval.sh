@@ -78,7 +78,6 @@ python3 -u eval_humaneval.py \
     --temperature $TEMPERATURE \
     --max-tokens $MAX_TOKENS \
     --num-samples $NUM_SAMPLES \
-    --generate-only \
     $OUTPUT_DIR_FLAG \
     $CONTEXT_FLAG
 
