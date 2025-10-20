@@ -1,0 +1,467 @@
+{
+  "metrics": {
+    "accuracy": 0.28,
+    "edit_similarity": 0.6240011293828782,
+    "exact_match": 0.28,
+    "total_samples": 50,
+    "passes": 14,
+    "temperature": 0.2,
+    "max_tokens": 128,
+    "language": "python",
+    "dataset": "crosscode_python",
+    "post_process": false,
+    "model": "Qwen/Qwen2.5-Coder-3B"
+  },
+  "results": [
+    {
+      "index": 0,
+      "groundtruth": "sequence_actual[:, -max_stop_string:])[0]",
+      "prediction": "sequence_actual[:, -max_stop_string:])[0]",
+      "raw_prediction": "sequence_actual[:, -max_stop_string:])[0]",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 1,
+      "groundtruth": "gen_accept_token(batch_token)",
+      "prediction": "gen_next(batch_token)",
+      "raw_prediction": "gen_next(batch_token)",
+      "es": 0.6551724137931034,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 2,
+      "groundtruth": "settings.token_repetition_penalty_max = 1.176",
+      "prediction": "settings.token_repetition_penalty_max = 1.15",
+      "raw_prediction": "settings.token_repetition_penalty_max = 1.15",
+      "es": 0.9555555555555556,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 3,
+      "groundtruth": "decode(prompt_ids)[0]",
+      "prediction": "decode(prompt_ids)",
+      "raw_prediction": "decode(prompt_ids)\n",
+      "es": 0.8571428571428572,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 4,
+      "groundtruth": "gen_begin_reuse(input_ids)",
+      "prediction": "sequence_actual = input_ids",
+      "raw_prediction": "sequence_actual = input_ids\n    generator.sequence = input_ids\n    generator.sequence_len = input_ids.shape[-1]\n    generator.sequence_max_len = model.config.max_seq_len\n    generator.sequence_token_offset = 0\n    generator.sequence_token_offset_max = 0\n    generator.sequence_token_offset_max = 0\n    generator.sequence_token_offset_max = 0\n    generator.sequence_token_offset_max = 0\n    generator.sequence_token_offset_max = 0\n    generator.sequence_token_offset_max = 0\n    generator.sequence_token_offset_max = 0\n    generator.sequence_token_offset_max = 0\n    generator.sequence",
+      "es": 0.40740740740740744,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 5,
+      "groundtruth": "encode(prompts, return_mask = True)",
+      "prediction": "encode(prompts[0], add_bos = True, add_eos = False)",
+      "raw_prediction": "encode(prompts[0], add_bos = True, add_eos = False)\n    ids2, mask2 = tokenizer.encode(prompts[1], add_bos = True, add_eos = False)\n    ids = torch.cat([ids, ids2], dim = 0)\n    mask = torch.ones_like(ids, dtype = torch.int8)\n    mask = torch.cat([mask, mask2], dim = 0)\n    mask = torch.cat([mask, mask], dim = 0)\n    mask[ids == tokenizer.eos_token_id] = 0\n    mask[ids2 == tokenizer.e",
+      "es": 0.47058823529411764,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 6,
+      "groundtruth": "decode(generator.sequence[0])",
+      "prediction": "decode(generator.sequence[:, len(ids):])",
+      "raw_prediction": "decode(generator.sequence[:, len(ids):])",
+      "es": 0.7,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 7,
+      "groundtruth": "calculate_rotary_embedding_base()",
+      "prediction": "theta = args.theta",
+      "raw_prediction": "theta = args.theta\n    config.affinity = args.affinity\n    config.affinity = args.affinity\n    config.set_affinity(args.affinity)",
+      "es": 0.1515151515151515,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 8,
+      "groundtruth": "generate_simple(prompts, max_new_tokens = 200)",
+      "prediction": "generate(line, max_gen_len = 128, stop_ids = [tokenizer.eos_token_id])",
+      "raw_prediction": "generate(line, max_gen_len = 128, stop_ids = [tokenizer.eos_token_id])",
+      "es": 0.30000000000000004,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 9,
+      "groundtruth": "set_auto_map(args.gpu_split)",
+      "prediction": "gpu_split = args.gpu_split",
+      "raw_prediction": "gpu_split = args.gpu_split\n    config.gpu_peer_fix = args.gpu_peer_fix\n    config.alpha_value = args.alpha\n    config.calculate_rotary_embedding_base()\n\n    if args.flash_atn:\n        config.use_flash_attn_2 = True\n        try:\n            config.max_input_len = int(args.flash_attn)\n        except ValueError:\n            pass\n\n    config.matmul_recons_thd = args.matmul_recons_thd\n    config.fused_mlp_thd = args.fused_mlp_thd\n    config.sdp_thd = args.sdp_thd\n    config.matmul_f_fuse_remap =",
+      "es": 0.5357142857142857,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 10,
+      "groundtruth": "forward(generator.sequence[:, -1:], cache, input_mask = mask)",
+      "prediction": "forward(ids, cache, 0, False)",
+      "raw_prediction": "forward(ids, cache, 0, False)\n",
+      "es": 0.34426229508196726,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 11,
+      "groundtruth": "enter(\"b\") == ConfigRoute(\"a.b\")",
+      "prediction": "enter(\"b\") == ConfigRoute(\"a.b\")",
+      "raw_prediction": "enter(\"b\") == ConfigRoute(\"a.b\")\n    assert ConfigRoute(\"a\").enter([\"b\"]) == ConfigRoute(\"a.b\")\n    assert ConfigRoute(\"a\").enter(ConfigRoute(\"b\")) == ConfigRoute(\"a.b\")\n    assert ConfigRoute(\"a\").enter(ConfigRoute([\"b\"])) == ConfigRoute(\"a.b\")",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 12,
+      "groundtruth": "dispatch(cls) is export_model_async:",
+      "prediction": "dispatch(cls) is export_model_async:",
+      "raw_prediction": "dispatch(cls) is export_model_async:",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 13,
+      "groundtruth": "compile(to_compile=to_compile)",
+      "prediction": "compile(to_compile=to_compile)",
+      "raw_prediction": "compile(to_compile=to_compile)",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 14,
+      "groundtruth": "set_auto_map('17.615,18.8897')",
+      "prediction": "load_model_path = model_path                    # supp",
+      "raw_prediction": "load_model_path = model_path                    # supply path to model weights file",
+      "es": 0.11111111111111116,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 15,
+      "groundtruth": "sample_current(logits_mixed)",
+      "prediction": "sample(logits_mixed, generator.settings)",
+      "raw_prediction": "sample(logits_mixed, generator.settings)",
+      "es": 0.30000000000000004,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 16,
+      "groundtruth": "sequence[:, -1:], cache, input_mask = mask)",
+      "prediction": "sequence[0], cache)",
+      "raw_prediction": "sequence[0], cache)",
+      "es": 0.41860465116279066,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 17,
+      "groundtruth": "dump(opt, f, indent=\"\\t\")",
+      "prediction": "dump(opt, f, indent=4, ensure_ascii=False)",
+      "raw_prediction": "dump(opt, f, indent=4, ensure_ascii=False)",
+      "es": 0.5,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 18,
+      "groundtruth": "gen_begin(ids)",
+      "prediction": "gen_feed_tokens(ids)",
+      "raw_prediction": "gen_feed_tokens(ids)\n\ngenerator.gen_prune_to(config.max_seq_len - 1, tokenizer.newline_token_id)",
+      "es": 0.55,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 19,
+      "groundtruth": "load(f, object_pairs_hook=OrderedDict)  # noqa",
+      "prediction": "load(f, object_hook=OrderedDict)",
+      "raw_prediction": "load(f, object_hook=OrderedDict)\n    return opt\n\n\ndef parse_and_set(opt_path: str, local_type) -> dict:\n    opt = parse(opt_path)\n    opt = class_type(opt)\n    return opt\n\n\ndef set_gpu(opt: dict) -> dict:\n    if isinstance(opt['gpu_ids'], int):\n        opt['gpu_ids'] = [opt['gpu_id']]",
+      "es": 0.6956521739130435,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 20,
+      "groundtruth": "update(config.sources[\"default\"])",
+      "prediction": "update(config.sources[\"default\"])",
+      "raw_prediction": "update(config.sources[\"default\"])",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 21,
+      "groundtruth": "active is False",
+      "prediction": "active is False",
+      "raw_prediction": "active is False",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 22,
+      "groundtruth": "options.keys())",
+      "prediction": "sources[\"system\"].keys())",
+      "raw_prediction": "sources[\"system\"].keys())\n\n\ndef test_system_source_app_path():\n    config = Config()\n\n    assert config.sources[\"system\"][\"app_path\"] == os.getcwd()\n\n\ndef test_system_source_app_path_is_none():\n    config = Config(Options(app_path=None)\n    assert config.sources[\"system\"][\"app_path\"] is None\n\n\ndef test_system_source_app_path_is_empty_string():\n    config = Config(Options(app_path=\"\")\n    assert config.sources[\"system\"][\"app_path\"] is None\ndef test_system_source_app_path_is_invalid():\n    config = Config(Options(app_path=\"invalid\")\n    assert config.sources[\"system\"][\"app_path\"] is None",
+      "es": 0.4,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 23,
+      "groundtruth": "_logger.getEffectiveLevel() == INFO",
+      "prediction": "_logger.getEffectiveLevel() == INFO",
+      "raw_prediction": "_logger.getEffectiveLevel() == INFO\n\n\ndef test_logger_info_level():",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 24,
+      "groundtruth": "init_parser(subparser)",
+      "prediction": "add_arguments(subparser)",
+      "raw_prediction": "add_arguments(subparser)",
+      "es": 0.5416666666666667,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 25,
+      "groundtruth": "option(\"active\"):",
+      "prediction": "option(\"active\"):",
+      "raw_prediction": "option(\"active\"):",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 26,
+      "groundtruth": "gen_feed_tokens(in_tokens)",
+      "prediction": "gen_feed(in_tokens)",
+      "raw_prediction": "gen_feed(in_tokens)",
+      "es": 0.7307692307692308,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 27,
+      "groundtruth": "gen_prune_to(config.max_seq_len - expect_tokens - extra_prune, tokenizer.newline_token_id)",
+      "prediction": "gen_rewind(extra_prune)",
+      "raw_prediction": "gen_rewind(extra_prune)",
+      "es": 0.2222222222222222,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 28,
+      "groundtruth": "gen_num_tokens() >= max_tokens:",
+      "prediction": "cache.seq_len >= max_tokens:",
+      "raw_prediction": "cache.seq_len >= max_tokens:",
+      "es": 0.5483870967741935,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 29,
+      "groundtruth": "disallow_tokens([tokenizer.newline_token_id, tokenizer.eos_token_id])",
+      "prediction": "disallow_tokens(tokenizer.end_of_text_token_ids)",
+      "raw_prediction": "disallow_tokens(tokenizer.end_of_text_token_ids)",
+      "es": 0.6231884057971014,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 30,
+      "groundtruth": "decode(generator.sequence_actual[:, -num_res_tokens:][0])",
+      "prediction": "decode(gen_token, generator.gen_num_tokens() - num_res_tokens)",
+      "raw_prediction": "decode(gen_token, generator.gen_num_tokens() - num_res_tokens)",
+      "es": 0.4838709677419355,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 31,
+      "groundtruth": "sequence_actual[:, -num_res_tokens:][0])",
+      "prediction": "decode(gen_token))  # Decode the current line",
+      "raw_prediction": "decode(gen_token))  # Decode the current line\n        if i == 0: res_line = text\n        else: res_line = res_line + text[len(res_line):]  # Stream out the new text\n        if i == 0: res_line = text\n        else: res_line = res_line + text[len(res_line):]  # Stream out the new text\n        if i == 0: res_line = text\n        if: res_line = res_line + text[len(res_line):]  # Stream out the new text\n        if i == 0: res_line = text\n",
+      "es": 0.15555555555555556,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 32,
+      "groundtruth": "api_populate()",
+      "prediction": "api_get_sessions()",
+      "raw_prediction": "api_get_sessions()",
+      "es": 0.33333333333333337,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 33,
+      "groundtruth": "respond_multi(user_input)), mimetype = 'application/json')",
+      "prediction": "generate(user_input)), mimetype='text/event-stream')",
+      "raw_prediction": "generate(user_input)), mimetype='text/event-stream')\n        result.headers['Cache-Control'] = 'no-cache'\n        result.headers['Connection'] = 'keep-alive'\n        result.headers['Access-Control-Allow-Origin'] = '*'\n        result.headers['Access-Control-Allow-Methods'] = 'POST'\n        result.headers['Access-Control-Allow-Headers'] = 'Content-Type'",
+      "es": 0.5,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 34,
+      "groundtruth": "print_options(args)",
+      "prediction": "set_model_files(args)",
+      "raw_prediction": "set_model_files(args)\n",
+      "es": 0.4285714285714286,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 35,
+      "groundtruth": "get_delivery(data)",
+      "prediction": "delivery(data)",
+      "raw_prediction": "delivery(data)",
+      "es": 0.7777777777777778,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 36,
+      "groundtruth": "run()",
+      "prediction": "run()",
+      "raw_prediction": "run()",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 37,
+      "groundtruth": "load_from_checkpoint(CKPT_PATH)",
+      "prediction": "load_from_checkpoint(",
+      "raw_prediction": "load_from_checkpoint(\n    CKPT_PATH,\n    args=argparse.Namespace(\n        articles_path=f\"{_data_base}/data/\",\n        video_ig65m_path=f\"{_data_base}/data/videos\",\n        # frames = f'{_data_base}/data/frames',\n        # video_s3d_path=f\"{_data_base}/video_mp4/s3d_how100m\",\n        video_s3d_path = None,\n        img_extract_vit_path=f\"{_data_base}/data/keyframes\",\n        img_tgt_vitPath=f\"{_data_base}/data/thumbnails\",\n        # img",
+      "es": 0.6774193548387097,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 38,
+      "groundtruth": "cointerleave(n)",
+      "prediction": "cointerleave(n)",
+      "raw_prediction": "cointerleave(n)",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 39,
+      "groundtruth": "interleave(n)",
+      "prediction": "interleave(n)",
+      "raw_prediction": "interleave(n)\n    i = FiniteFunction.identity(2*n)\n    assert a >> i == a\n    assert i >> a == a\n# Cointerleaving is the opposite of interleaving\n@given(n=objects)\ndef test_cointerleave(n: int):\n    a = FiniteFunction.interleave(n)",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 40,
+      "groundtruth": "build_req()",
+      "prediction": "build()",
+      "raw_prediction": "build()",
+      "es": 0.6363636363636364,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 41,
+      "groundtruth": "agg_diff_fe_calc(self.detect_data, self.anomaly_duration)",
+      "prediction": "get_agg_list(self.detect_data)",
+      "raw_prediction": "get_agg_list(self.detect_data)\n        if len(agg_list) < self.anomaly_duration:\n            return True",
+      "es": 0.3508771929824561,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 42,
+      "groundtruth": "diff_percentile_func(self.detect_data, int(k), is_down)[-1]",
+      "prediction": "smoothness(v)",
+      "raw_prediction": "smoothness(v)",
+      "es": 0.0847457627118644,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 43,
+      "groundtruth": "diff_feature_calc(detect_data, self.default_point)",
+      "prediction": "diff(detect_data)",
+      "raw_prediction": "diff(detect_data)",
+      "es": 0.33999999999999997,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 44,
+      "groundtruth": "turkey_box_plot(detect_data_diff, self.tk_delta)[3]",
+      "prediction": "get_down_threshold(detect_data_diff, self.tk_delta)",
+      "raw_prediction": "get_down_threshold(detect_data_diff, self.tk_delta)",
+      "es": 0.6470588235294117,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 45,
+      "groundtruth": "turkey_box_plot([freq[k] for k in search_range])[4]",
+      "prediction": "get_max_value(freq)",
+      "raw_prediction": "get_max_value(freq)       ",
+      "es": 0.196078431372549,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 46,
+      "groundtruth": "exceptions.TDMRepNoParam, self.rule.is_allowed, None, None)",
+      "prediction": "exception.HttpUnknownHeaderName, self.rule.get_header_value, None, None)",
+      "raw_prediction": "exception.HttpUnknownHeaderName, self.rule.get_header_value, None, None)",
+      "es": 0.5694444444444444,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 47,
+      "groundtruth": "get_header_value(headers, self.HEADER_NAME)",
+      "prediction": "get_header_value(headers, self.HEADER_NAME)",
+      "raw_prediction": "get_header_value(headers, self.HEADER_NAME)",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 48,
+      "groundtruth": "get_header_value_from_response(response, self.HEADER_NAME)",
+      "prediction": "get_header_value_from_response(response, self.HEADER_NAME)",
+      "raw_prediction": "get_header_value_from_response(response, self.HEADER_NAME)",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 49,
+      "groundtruth": "HEADER_NAME), \"noai\")",
+      "prediction": "HEADER_NAME), \"noai\")",
+      "raw_prediction": "HEADER_NAME), \"noai\")",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    }
+  ]
+}

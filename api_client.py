@@ -38,7 +38,8 @@ class ModelAPIClient:
         temperature: float = 0.01,
         max_tokens: int = 512,
         stop: Optional[List[str]] = None,
-        n: int = 1
+        n: int = 1,
+        top_p: Optional[float] = None
     ) -> List[str]:
         """
         Generate code completion from the model.
@@ -49,6 +50,7 @@ class ModelAPIClient:
             max_tokens: Maximum tokens to generate
             stop: List of stop sequences
             n: Number of completions to generate
+            top_p: Nucleus sampling parameter (0.0 to 1.0)
 
         Returns:
             List of generated completions
@@ -63,6 +65,9 @@ class ModelAPIClient:
 
         if stop:
             payload["stop"] = stop
+
+        if top_p is not None:
+            payload["top_p"] = top_p
 
         headers = {
             "Content-Type": "application/json",

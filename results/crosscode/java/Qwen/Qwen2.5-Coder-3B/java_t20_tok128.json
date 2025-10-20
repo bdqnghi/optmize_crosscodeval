@@ -1,0 +1,467 @@
+{
+  "metrics": {
+    "accuracy": 0.26,
+    "edit_similarity": 0.6876625651706967,
+    "exact_match": 0.26,
+    "total_samples": 50,
+    "passes": 13,
+    "temperature": 0.2,
+    "max_tokens": 128,
+    "language": "java",
+    "dataset": "crosscode_java",
+    "post_process": false,
+    "model": "Qwen/Qwen2.5-Coder-3B"
+  },
+  "results": [
+    {
+      "index": 0,
+      "groundtruth": "int startAngle = ((Arc) object).getStartAngle();",
+      "prediction": "int startAngle = ((Arc) object).getStartAngle();",
+      "raw_prediction": "int startAngle = ((Arc) object).getStartAngle();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 1,
+      "groundtruth": "((Line) object).getColor());",
+      "prediction": "((Line) object).getColor());",
+      "raw_prediction": "((Line) object).getColor());",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 2,
+      "groundtruth": "(Arc) object).getStopAngle();",
+      "prediction": "((Arc) object).getStopAngle());",
+      "raw_prediction": "((Arc) object).getStopAngle());",
+      "es": 0.935483870967742,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 3,
+      "groundtruth": "server.blockUntilShutdown();",
+      "prediction": "System.out.print",
+      "raw_prediction": "\n        System.out.println(\"Server started, listening on \" + server.getPort());\n        System.in.read(); // Wait for user to press a key\n        server.shutdown();",
+      "es": 0.1785714285714286,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 4,
+      "groundtruth": "HttpClientUtil.sendGetRequest();",
+      "prediction": "logger.info(\"Receive message, body={}\", messageView.getBody().to",
+      "raw_prediction": "logger.info(\"Receive message, body={}\", messageView.getBody().toStringUtf8());\n            logger.info(\"Receive message, topic={}\", messageView.getTopic());\n            logger.info(\"Receive message, tags={}\", messageView.getTag());\n            logger.info(\"Receive message, keys={}\", messageView.getKeys());\n            logger.info(\"Receive message, offset={}\", messageView.getOffset());\n            logger.info(\"Receive message, timestamp={}\", messageView.getTimestamp());\n            logger.info(\"Receive message, properties={}\", messageView.getProperties());\n\n            logger.info(\"Receive message, headers={}\", messageView.getHeaders());\n\n            logger.info(\"Receive message, attributes",
+      "es": 0.171875,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 5,
+      "groundtruth": "GreetingClient.start();",
+      "prediction": "",
+      "raw_prediction": "",
+      "es": 0.0,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 6,
+      "groundtruth": "RocketMqClients.CreatePushConsumer(messageView -> {",
+      "prediction": "RocketMqClients.consumeMess",
+      "raw_prediction": "    RocketMqClients.consumeMessage(\"processC\", \"processC\", (messageView) -> {",
+      "es": 0.4901960784313726,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 7,
+      "groundtruth": "Producer producer = RocketMqClients.CreateProducer();",
+      "prediction": "Producer producer = RocketMqClients.createProducer();",
+      "raw_prediction": " Producer producer = RocketMqClients.createProducer();\n        producer.start();",
+      "es": 0.9811320754716981,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 8,
+      "groundtruth": "systemMessage.setContent(systemprompt);",
+      "prediction": "systemMessage.setCont",
+      "raw_prediction": "systemMessage.setContent(systemprompt;\n            messages.add(systemMessage;\n            // List of user messages\n            if(isPrivate(update)) {\n            // If this is a private chat, then we send along a number of previous messages for context\n            if(!this.userContext.containsKey(update.message().from().id())) {\n                // If the user is not in the map push a new entry for him\n                this.userContext.put(update.message().from().id(),new MessageLog<>(maxMessagePoolSize);\n                // If there are examples, add them to the context (this is only the first time)\n            if(!this.examples.isEmpty()) {\n",
+      "es": 0.5384615384615384,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 9,
+      "groundtruth": "\"Contador de tokens: %d\",gptService.getNumTokens());",
+      "prediction": "\"Tokens used: %d\", gptService.getTokensUsed());",
+      "raw_prediction": "\"Tokens used: %d\", gptService.getTokensUsed());\n        sendReply(update, message);\n    }\n\n    /**\n     * Sends a message to the user with information about the number of tokens currently consumed in GPT generation.\n     * @param update The Message received from the user.\n     */\n    private void printUsage(Update update) {\n        String message = String.format(\"Tokens used: %d\", gptService.getTokensUsed());",
+      "es": 0.5576923076923077,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 10,
+      "groundtruth": "chatRequest.setMaxTokens(maxtokens);",
+      "prediction": "chatRequest.setMaxTokens(maxtokens);",
+      "raw_prediction": "chatRequest.setMaxTokens(maxtokens);\n            chatRequest.setMessages(null);",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 11,
+      "groundtruth": "chatRequest.setModel(model);",
+      "prediction": "chatRequest.setM",
+      "raw_prediction": "chatRequest.setModel(model;",
+      "es": 0.5714285714285714,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 12,
+      "groundtruth": "systemMessage.setRole(\"system\");",
+      "prediction": "systemMessage.setRole(\"system\");",
+      "raw_prediction": "systemMessage.setRole(\"system\");",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 13,
+      "groundtruth": "userMessage.setContent(this.presentation);",
+      "prediction": "userMessage.setContent(text;",
+      "raw_prediction": "userMessage.setContent(text;\n            messages.add(userMessage);\n            // set messages to the request\n            chatRequest.setMessages(messages)\n            // Send synchronous request to the OpenAI Api\n            response = client.getCompletion(chatRequest);\n            // Incremet token counter\n            ntokens = ntokens + response.getUsage().getTotalTokens();\n            // Return text to be sent to the user\n            return response.getChoices().get(0).getMessage().getContent();\n\n        } catch (Exception e) {\n            e.printStackTrace();\n            return \"Lo siento, algo ha ido mal.\";\n        }\n    }\n\n    /**\n     * This method",
+      "es": 0.6428571428571428,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 14,
+      "groundtruth": "exampleMessage.setRole(role.toLowerCase());",
+      "prediction": "exampleMessage.setRole(role);",
+      "raw_prediction": "\n            exampleMessage.setRole(role);\n            exampleMessage.setContent(content);\n            results.add(exampleMessage);\n            } else {\n            log.error(\"Somethingwent wrong with this example: \" + example);\n            }\n        }\n        return results;\n    }\n\n    /**\n     * This method returns an ArrayList of Messages based on an ArrayList\n     * of Strings. Each message is create with a role and a content.\n     * @param examples the ArrayList of Strings to convert into Messages\n     * @return an ArrayList of Messages\n     */\n    private ArrayList<Message> getExamples(ArrayList<String> examples) {\n        ArrayList<Message> results = new ArrayList<>();\n",
+      "es": 0.6744186046511628,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 15,
+      "groundtruth": "AccUtils.printLogMsg(\"\u63d0\u53d6\u5230\u7684\u7b2c\u4e00\u4e2a\u6574\u6570\u662f\uff1a\" + i);",
+      "prediction": "AccUtils.printLogMsg(\"\u5728\u5b57\u7b26\u4e32\u4e2d\u63d0\u53d6\u5230\u6574\u6570\uff1a\" + i);",
+      "raw_prediction": "    AccUtils.printLogMsg(\"\u5728\u5b57\u7b26\u4e32\u4e2d\u63d0\u53d6\u5230\u6574\u6570\uff1a\" + i);",
+      "es": 0.775,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 16,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\u6253\u5f00\");",
+      "raw_prediction": "    AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\u6253\u5f00\");",
+      "es": 0.9375,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 17,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5f00\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5361\");",
+      "raw_prediction": "    AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5361\");",
+      "es": 0.967741935483871,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 18,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6253\u5f00\u9489\u9489\");",
+      "prediction": "AccUtils.printLogMsg(\"\u6253\u5f00\u9489\u9489\");",
+      "raw_prediction": "    AccUtils.printLogMsg(\"\u6253\u5f00\u9489\u9489\");\n        AccUtils.startApplication(Variable.context, \"com.alibaba.android.rimet\");\n        AccUtils.timeSleep(7000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));\n        AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5f00\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u8003\u52e4\u6253\u5361\"));\n        AccUtils.timeSleep(6000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u597d\u7684\");\n        Acc",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 19,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u6253\u5361\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u6253\u5361\");",
+      "raw_prediction": " AccUtils.printLogMsg(\"\u70b9\u51fb\u6253\u5361\");",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 20,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u6682\u65f6\u4e0d\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u6682\u4e0d\u6253\u5361\");",
+      "raw_prediction": "    AccUtils.printLogMsg(\"\u70b9\u51fb\u6682\u4e0d\u6253\u5361\");",
+      "es": 0.9032258064516129,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 21,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6807\u9898 => \" + videoDesc);",
+      "prediction": "if (videoDesc != null)",
+      "raw_prediction": "     if (videoDesc != null) {\n                AccUtils.printLogMsg(\"\u5f53\u524d\u89c6\u9891\u6807\u9898 => \" + videoDesc);\n            }\n",
+      "es": 0.16279069767441856,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 22,
+      "groundtruth": "AccUtils.printLogMsg(\"\u8fd4\u56de\u5230\u521d\u59cb\u72b6\u6001\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");",
+      "raw_prediction": "    AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));\n        AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5f00\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u8003\u52e4\u6253\u5361\"));\n        AccUtils.timeSleep(6000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u597d\u7684\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u597d\u7684\"));\n        AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u6682\u65f6\u4e0d\");\n        AccUtils",
+      "es": 0.78125,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 23,
+      "groundtruth": "AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));",
+      "prediction": "AccUtils.timeSleep(3000);",
+      "raw_prediction": "    AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));\n        AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));\n        AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));\n        AccUtils.timeSleep(3000);\n        AccUtils",
+      "es": 0.265625,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 24,
+      "groundtruth": "AccUtils.printLogMsg(\"\u70b9\u51fb\u597d\u7684\");",
+      "prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u4e0a\u73ed\u6253\u5361\");",
+      "raw_prediction": "AccUtils.printLogMsg(\"\u70b9\u51fb\u4e0a\u73ed\u6253\u5361\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u4e0a\u73ed\u6253\u5361\"));\n        AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u4e0a\u73ed\u6253\u5361\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u4e0a\u73ed\u6253\u5361\"));\n        AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u4e0a\u73ed\u6253\u5361\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u4e0a\u73ed\u6253\u5361\"));\n        AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u4e0a\u73ed\u6253\u5361\");\n        AccUtils.click",
+      "es": 0.8709677419354839,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 25,
+      "groundtruth": "dyTaskService.main();",
+      "prediction": "dyTaskService.main();",
+      "raw_prediction": " dyTaskService.main();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 26,
+      "groundtruth": "AccUtils.printLogMsg(\"\u5411\u4e0b\u6ed1\u52a8\");",
+      "prediction": "AccUtils.printLogMsg(\"swipe to next video\");",
+      "raw_prediction": "        AccUtils.printLogMsg(\"swipe to next video\");",
+      "es": 0.5681818181818181,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 27,
+      "groundtruth": "= AccUtils.findElementListByContainText(\"\u6253\u5361\");",
+      "prediction": "= AccUtils.findAccessibilityNodeInfosByText(\"\u4e0a\u73ed\u6253\u5361\");",
+      "raw_prediction": "= AccUtils.findAccessibilityNodeInfosByText(\"\u4e0a\u73ed\u6253\u5361\");",
+      "es": 0.5769230769230769,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 28,
+      "groundtruth": "AccUtils.printLogMsg(\"\u6253\u5361\u5b8c\u6210\uff0c\u8fd4\u56de\u684c\u9762\");",
+      "prediction": "AccUtils.back();",
+      "raw_prediction": "AccUtils.back();\n        AccUtils.timeSleep(2000);\n        AccUtils.back();\n        AccUtils.timeSleep(2000);\n        AccUtils.back();\n        AccUtils.timeSleep(2000);\n        AccUtils.back();\n        AccUtils.timeSleep(2000);\n        AccUtils.back();\n        AccUtils.timeSleep(2000);\n        AccUtils.back();\n        AccUtils.timeSleep(2000);\n        AccUtils.back();\n        AccUtils.timeSleep(2000);\n        AccUtils.back();\n        AccUtils.timeSleep(2000);\n       ",
+      "es": 0.3529411764705882,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 29,
+      "groundtruth": "TinkerManager.setUpgradeRetryEnable(true);",
+      "prediction": "TinkerManager.setApplicationLike(this);",
+      "raw_prediction": " TinkerManager.setApplicationLike(this);\n        TinkerManager.setTinkerFlags(TinkerFlags.TINKER_ENABLE_ALL);\n        TinkerManager.setUpgradeRetryEnable(true);\n    }\n\n    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)\n    public void registerActivityLifecycleCallbacks(Application.ActivityLifecycleCallbacks callbacks) {\n        get android.app.ActivityManager;\n        ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);\n        am.registerActivityLifecycleCallbacks(callback);\n    }\n\n    @Override\n    public void onBaseContextAttached(Context base) {\n        super.onBaseContextAttached(base);\n        MultiDex.install(base);\n\n",
+      "es": 0.5952380952380952,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 30,
+      "groundtruth": "AccUtils.findElementByText(\"\u8003\u52e4\u6253\u5361\"));",
+      "prediction": "AccUtils.findElementByText(\"\u8003\u52e4\"));",
+      "raw_prediction": "AccUtils.findElementByText(\"\u8003\u52e4\"));\n        AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u6253\u5361\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u6253\u5361\"));\n        AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u4e0a\u73ed\u6253\u5361\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u4e0a\u73ed\u6253\u5361\"));\n        AccUtils.timeSleep(3000;\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u4e0a\u73ed\u6253\u5361\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u4e0a\u73ed\u6253\u5361\"));\n        AccUtils.timeSleep(30",
+      "es": 0.9444444444444444,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 31,
+      "groundtruth": "TinkerManager.installTinker(this);",
+      "prediction": "TinkerManager.setTinkerFlags(ShareConstants.TINKER_ENABLE_ALL);",
+      "raw_prediction": "    TinkerManager.setTinkerFlags(ShareConstants.TINKER_ENABLE_ALL);\n        //Optional tuning parameters.. default value are set in TinkerOptions\n        TinkerOptions tinkerOptions = new TinkerOptions(true, true, true, true, true, true);\n        tinkerOptions.setPatchRetry(true);\n        tinkerOptions.setPatchRetryIntervalSec(10);\n        tinkerOptions.setPatchRollbackOnOutOfMemory(true);\n        TinkerManager.setTinkerOptions(tinkerOptions);\n        //\u8fd9\u91cc\u53ea\u4e3a\u4e86\u5c55\u793a\u5982\u4f55\u4f7f\u7528\uff0c\u6240\u4ee5\u53ea\u521d\u59cb\u5316\u4e86tinker\uff0c\u5b9e\u9645\u4f7f\u7528\u4e2d\u8fd8\u9700\u8981\u521d\u59cb\u5316tinker\n       ",
+      "es": 0.3492063492063492,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 32,
+      "groundtruth": "= AccUtils.findElementByText(\"\u6211\u77e5\u9053\u4e86\");",
+      "prediction": "= AccUtils.findElementByText(\"\u4ee5\u540e\u518d\u8bf4\");",
+      "raw_prediction": "= AccUtils.findElementByText(\"\u4ee5\u540e\u518d\u8bf4\");",
+      "es": 0.8918918918918919,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 33,
+      "groundtruth": "element = AccUtils.findElementByText(\"\u4ee5\u540e\u518d\u8bf4\");",
+      "prediction": "element = AccUtils.findElementByText(\"\u8df3\u8fc7\");",
+      "raw_prediction": "element = AccUtils.findElementByText(\"\u8df3\u8fc7\");",
+      "es": 0.9111111111111111,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 34,
+      "groundtruth": "AccUtils.printLogMsg(\"open dy App\");",
+      "prediction": "AccUtils.timeSleep(waitTwoSecond);",
+      "raw_prediction": "    AccUtils.timeSleep(waitTwoSecond);\n        AccUtils.printLogMsg(\"\u6253\u5f00\u6296\u97f3\");",
+      "es": 0.36111111111111116,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 35,
+      "groundtruth": "AccUtils.openApp(\"\u6296\u97f3\");",
+      "prediction": "AccUtils.timeSleep(waitThreeSecond);",
+      "raw_prediction": " AccUtils.timeSleep(waitThreeSecond);\n        AccUtils.printLogMsg(\"\u8fdb\u5165\u6296\u97f3\u4e3b\u9875\");\n        AccUtils.clickPoint(Variable.mWidth - 50, 150, 100);\n        AccUtils.timeSleep(waitThreeSecond);\n        AccUtils.printLogMsg(\"\u8fdb\u5165\u6296\u97f3\u4e3b\u9875\");\n        AccUtils.clickPoint(Variable.mWidth - 50, 150, 100);\n        AccUtils.timeSleep(waitThreeSecond);\n        AccUtils.printLogMsg(\"\u8fdb\u5165\u6296\u97f3\u4e3b\u9875\");\n        AccUtils.clickPoint(Variable.mWidth - 50, 150, 1",
+      "es": 0.38888888888888884,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 36,
+      "groundtruth": "TinkerManager.setTinkerApplicationLike(this);",
+      "prediction": "// \u53ea\u6709\u8c03\u8bd5\u5e76\u4e14\u662fTinker\u5b89\u88c5\u7684\uff0c\u624d\u8fdb\u884cTinker\u521d\u59cb\u5316",
+      "raw_prediction": "    // \u53ea\u6709\u8c03\u8bd5\u5e76\u4e14\u662fTinker\u5b89\u88c5\u7684\uff0c\u624d\u8fdb\u884cTinker\u521d\u59cb\u5316\n        if (BuildConfig.TINKER_ENABLE && Tinker.isTinkerLoadSuccess()) {\n                   SampleApplicationLike.this.registerActivityLifecycleCallbacks(new SampleActivityLifecycleCallbacks());\n        }\n    }\n\n    @TargetApi(Build.VERSION_CODES.ICE_cream_sandwich)\n    public void registerActivityLifecycleCallbacks(Application.ActivityLifecycleCallbacks callbacks) {\n        getApplication().registerActivityLifecycleCallbacks(callback);\n    }\n\n    @Override\n    public void onBaseContextAttached(Context base) {\n        super.onBaseContextAttached(base);\n        // \u53ea\u6709\u8c03\u8bd5\u5e76\u4e14\u662f",
+      "es": 0.2222222222222222,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 37,
+      "groundtruth": "Utils.isBackground()) {",
+      "prediction": "result.isNewP",
+      "raw_prediction": "result.isNewPatch) {",
+      "es": 0.13043478260869568,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 38,
+      "groundtruth": "AccUtils.printLogMsg(\"\u5728\u5b57\u7b26\u4e32\u4e2d\u6ca1\u6709\u627e\u5230\u6574\u6570\uff01\");",
+      "prediction": "AccUtils.printLogMsg(\"\u672a\u63d0\u53d6\u5230\u6574\u6570\");",
+      "raw_prediction": " AccUtils.printLogMsg(\"\u672a\u63d0\u53d6\u5230\u6574\u6570\");",
+      "es": 0.7567567567567568,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 39,
+      "groundtruth": "WindowPermissionCheck.checkPermission(this);",
+      "prediction": "WindowPermissionCheck.checkPermission(this);",
+      "raw_prediction": "WindowPermissionCheck.checkPermission(this);",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 40,
+      "groundtruth": "AccUtils.timeSleep(3000);",
+      "prediction": "AccUtils.timeSleep(2000);",
+      "raw_prediction": "    AccUtils.timeSleep(2000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u6211\u7684\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u6211\u7684\"));\n        AccUtils.timeSleep(2000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u6211\u7684\u5de5\u4f5c\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u6211\u7684\u5de5\u4f5c\"));\n        AccUtils.timeSleep(2000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));\n        AccUtils.timeSleep(2000);\n        AccUtils.printLog",
+      "es": 0.96,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 41,
+      "groundtruth": "AccUtils.timeSleep(6000);",
+      "prediction": "AccUtils.timeS",
+      "raw_prediction": "    AccUtils.timeSleep(3000;\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u6253\u5361\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u6253\u5361\"));\n        AccUtils.timeSleep(3000;\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u4e0a\u73ed\u6253\u5361\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u4e0a\u73ed\u6253\u5361\"));\n        AccUtils.timeSleep(3000;\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u4e0a\u73ed\u6253\u5361\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u4e0a\u73ed\u6253\u5361\"));\n        AccUtils.timeSleep(3000;\n        AccUtils.printLog",
+      "es": 0.56,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 42,
+      "groundtruth": "AccUtils.timeSleep(2000);",
+      "prediction": "AccUtils.timeSleep(2000);",
+      "raw_prediction": "    AccUtils.timeSleep(2000);",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 43,
+      "groundtruth": "AccUtils.timeSleep(7000);",
+      "prediction": "AccUtils.timeSleep(7000);",
+      "raw_prediction": "    AccUtils.timeSleep(7000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u5de5\u4f5c\u53f0\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u5de5\u4f5c\u53f0\"));\n        AccUtils.timeSleep(3000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u8003\u52e4\u6253\u5f00\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u8003\u52e4\u6253\u5361\"));\n        AccUtils.timeSleep(6000);\n        AccUtils.printLogMsg(\"\u70b9\u51fb\u597d\u7684\");\n        AccUtils.clickParentCanClick(AccUtils.findElementByText(\"\u597d\u7684\"));\n        AccUtils.timeSleep(3000);\n        AccUtils",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 44,
+      "groundtruth": "returnCode = Utils.checkForPatchRecover(NEW_PATCH_RESTRICTION_SPACE_SIZE_MIN, maxMemory);",
+      "prediction": "//check patch file size",
+      "raw_prediction": "//check patch file size\n            long patchSize = SharePatchFileUtil.getFileOrDirectorySize(patchFile);\n            TinkerLog.i(TAG, \"patch file size:\" + patchSize);\n            if (patchSize > maxMemory * 3 / 4) {\n                returnCode = ShareConstants.ERROR_PATCH_TOO_BIG;\n            }\n        }\n\n        //check patch file size\n        if (returnCode == ShareConstants.ERROR_PATCH_OK) {\n            if (patchSize < NEW_patch_RESTRICTIONspaceSizeMin) {\n                returnCode = ShareConstants.ERROR_PATCH_TOO_SMALL;\n            }\n        }\n\n        //check patch file size\n       ",
+      "es": 0.1348314606741573,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 45,
+      "groundtruth": "ntokens = ntokens + response.getUsage().getTotalTokens();",
+      "prediction": "ntokens = ntokens + response.getUsage().getTotalTokens();",
+      "raw_prediction": "ntokens = ntokens + response.getUsage().getTotalTokens();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 46,
+      "groundtruth": ".setContent(response.getChoices().get(0).getMessage().getContent());",
+      "prediction": ".setContent(response.getChoices().get(0).getMessage().getContent());",
+      "raw_prediction": ".setContent(response.getChoices().get(0).getMessage().getContent());\n               ",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    },
+    {
+      "index": 47,
+      "groundtruth": "out.println(filme.getNome()+\" - \"+filme.getDuracao());",
+      "prediction": "out.println(\"O filme \"+filme.getNome()+\" est\u00e1 sendo exibido\");",
+      "raw_prediction": "out.println(\"O filme \"+filme.getNome()+\" est\u00e1 sendo exibido\");",
+      "es": 0.5,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 48,
+      "groundtruth": "itempedido.getPreco();",
+      "prediction": "itempedido.getValor();",
+      "raw_prediction": "itempedido.getValor();\n       ",
+      "es": 0.7727272727272727,
+      "em": false,
+      "passed": false
+    },
+    {
+      "index": 49,
+      "groundtruth": "= meuDVD.removerFilme();",
+      "prediction": "= meuDVD.removerFilme();",
+      "raw_prediction": "= meuDVD.removerFilme();",
+      "es": 1.0,
+      "em": true,
+      "passed": true
+    }
+  ]
+}

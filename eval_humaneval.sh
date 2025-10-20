@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # HumanEval Evaluation Script
-# Unified generation and evaluation
+# End-to-end generation and evaluation using evalplus
 #
 
 set -e
@@ -13,7 +13,6 @@ MAX_TOKENS=${MAX_TOKENS:-512}
 NUM_SAMPLES=${NUM_SAMPLES:-1}
 OUTPUT_DIR=${OUTPUT_DIR:-""}
 NO_CONTEXT=${NO_CONTEXT:-""}
-GENERATE_ONLY=${GENERATE_ONLY:-""}
 EVAL_ONLY=${EVAL_ONLY:-""}
 
 # Colors
@@ -34,13 +33,6 @@ echo "======================================================================"
 echo ""
 
 # Check dependencies
-if ! python3 -c "import evalplus" 2>/dev/null; then
-    echo -e "${YELLOW}Warning: evalplus library not found${NC}"
-    echo "Installing evalplus..."
-    pip install evalplus
-    echo ""
-fi
-
 if ! python3 -c "import datasets" 2>/dev/null; then
     echo -e "${YELLOW}Warning: datasets library not found${NC}"
     echo "Installing datasets..."
@@ -48,8 +40,27 @@ if ! python3 -c "import datasets" 2>/dev/null; then
     echo ""
 fi
 
-# Run unified evaluation
-echo -e "${BLUE}Running HumanEval evaluation...${NC}"
+# Handle eval-only mode
+if [ -n "$EVAL_ONLY" ]; then
+    echo -e "${BLUE}Evaluating existing results with evalplus...${NC}"
+    echo "----------------------------------------------------------------------"
+    echo "Input file: $EVAL_ONLY"
+    echo ""
+
+    docker run --rm \
+        -v $(pwd):/app \
+        ganler/evalplus:latest \
+        evalplus.evaluate --dataset humaneval \
+        --samples "/app/$EVAL_ONLY"
+
+    echo ""
+    echo -e "${GREEN}✅ Evaluation completed!${NC}"
+    echo "======================================================================"
+    exit 0
+fi
+
+# Step 1: Generate completions
+echo -e "${BLUE}Step 1: Generating completions...${NC}"
 echo "----------------------------------------------------------------------"
 
 CONTEXT_FLAG=""
@@ -62,25 +73,55 @@ if [ -n "$OUTPUT_DIR" ]; then
     OUTPUT_DIR_FLAG="--output-dir $OUTPUT_DIR"
 fi
 
-GENERATE_ONLY_FLAG=""
-if [ "$GENERATE_ONLY" = "true" ]; then
-    GENERATE_ONLY_FLAG="--generate-only"
-fi
-
-EVAL_ONLY_FLAG=""
-if [ -n "$EVAL_ONLY" ]; then
-    EVAL_ONLY_FLAG="--eval-only $EVAL_ONLY"
-fi
-
 python3 -u eval_humaneval.py \
     --model $MODEL \
     --temperature $TEMPERATURE \
     --max-tokens $MAX_TOKENS \
     --num-samples $NUM_SAMPLES \
+    --generate-only \
     $OUTPUT_DIR_FLAG \
-    $CONTEXT_FLAG \
-    $GENERATE_ONLY_FLAG \
-    $EVAL_ONLY_FLAG
+    $CONTEXT_FLAG
+
+if [ $? -ne 0 ]; then
+    echo -e "${RED}Error: Generation failed${NC}"
+    exit 1
+fi
+
+# Get the output file path
+if [ -n "$OUTPUT_DIR" ]; then
+    RESULT_DIR="$OUTPUT_DIR"
+else
+    # Auto-detect based on model
+    python3 -c "
+import json
+config = json.load(open('config.json'))
+model = '$MODEL'
+if model in config['models']:
+    print('results/humaneval/' + config['models'][model]['name'])
+else:
+    print('results/humaneval/' + model)
+" > /tmp/result_dir.txt
+    RESULT_DIR=$(cat /tmp/result_dir.txt)
+    rm /tmp/result_dir.txt
+fi
+
+TEMP_STR=$(printf "t%02d" $((${TEMPERATURE%.*} * 10 + ${TEMPERATURE#*.})))
+SAMPLES_FILE="$RESULT_DIR/samples_${TEMP_STR}_n${NUM_SAMPLES}.jsonl"
+
+echo ""
+echo -e "${GREEN}✅ Generation completed!${NC}"
+echo "Output: $SAMPLES_FILE"
+echo ""
+
+# Step 2: Evaluate with evalplus
+echo -e "${BLUE}Step 2: Evaluating with evalplus...${NC}"
+echo "----------------------------------------------------------------------"
+
+docker run --rm \
+    -v $(pwd):/app \
+    ganler/evalplus:latest \
+    evalplus.evaluate --dataset humaneval \
+    --samples "/app/$SAMPLES_FILE"
 
 if [ $? -ne 0 ]; then
     echo -e "${RED}Error: Evaluation failed${NC}"
@@ -88,5 +129,5 @@ if [ $? -ne 0 ]; then
 fi
 
 echo ""
-echo -e "${GREEN}✅ Evaluation completed successfully!${NC}"
+echo -e "${GREEN}✅ End-to-end evaluation completed successfully!${NC}"
 echo "======================================================================"

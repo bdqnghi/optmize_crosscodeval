@@ -29,7 +29,8 @@ def generate_completions(
     temperature: float,
     max_tokens: int,
     num_samples: int = 1,
-    use_chat_format: bool = False
+    use_chat_format: bool = False,
+    top_p: float = None
 ) -> List[Dict]:
     """Generate completions for HumanEval problems following evalplus structure"""
 
@@ -65,7 +66,8 @@ def generate_completions(
                     stop=stop_tokens,
                     temperature=temperature,
                     max_tokens=max_tokens,
-                    n=1
+                    n=1,
+                    top_p=top_p
                 )
 
                 raw_completion = outputs[0]
@@ -207,6 +209,13 @@ def main():
     )
 
     parser.add_argument(
+        "--top-p",
+        type=float,
+        default=None,
+        help="Nucleus sampling parameter (default: None)"
+    )
+
+    parser.add_argument(
         "--no-context",
         action="store_true",
         help="Force direct completion format (disable chat format even for instruct models)"
@@ -306,6 +315,7 @@ def main():
     print(f"Model Type: {'Instruct' if is_instruct else 'Base'}")
     print(f"Prompt Format: {'Chat' if use_chat_format else 'Direct'}")
     print(f"Temperature: {args.temperature}")
+    print(f"Top-p: {args.top_p if args.top_p is not None else 'None'}")
     print(f"Max Tokens: {args.max_tokens}")
     print(f"Num Samples: {args.num_samples}")
     print(f"Output Dir: {args.output_dir}")
@@ -338,7 +348,8 @@ def main():
         temperature=args.temperature,
         max_tokens=args.max_tokens,
         num_samples=args.num_samples,
-        use_chat_format=use_chat_format
+        use_chat_format=use_chat_format,
+        top_p=args.top_p
     )
 
     # Create output directory
