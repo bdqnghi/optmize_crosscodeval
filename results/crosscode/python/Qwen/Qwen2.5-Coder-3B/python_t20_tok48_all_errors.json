@@ -1,0 +1,173 @@
+{
+  "total_errors": 28,
+  "errors": [
+    {
+      "index": 405,
+      "error": "RetryError[<Future at 0x10c1d20c0 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>\"\"\"\nThe source code is based on:\nNeurASP: Embracing Neural Networks into Answer Set Programming\nZhun Yang, Adam Ishay, Joohyung Lee. Proceedings of the Twenty-Ninth International Joint C..."
+    },
+    {
+      "index": 673,
+      "error": "RetryError[<Future at 0x109ff86e0 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|># coding=utf-8\n# Copyright 2023 Junbong Jang.\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You..."
+    },
+    {
+      "index": 674,
+      "error": "RetryError[<Future at 0x10a2d15e0 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|># coding=utf-8\n# Copyright 2023 Junbong Jang.\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You..."
+    },
+    {
+      "index": 814,
+      "error": "RetryError[<Future at 0x109ed9ac0 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>import random\n\nimport numpy as np\nimport pytorch_lightning as pl\nimport torch\nfrom torch import nn\n\nfrom src.Datasets.BatchProcessor import BatchProcessDatav2\nfrom src.Module.Utilities i..."
+    },
+    {
+      "index": 816,
+      "error": "RetryError[<Future at 0x109f5d5b0 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>import random\n\nimport numpy as np\nimport pytorch_lightning as pl\nimport torch\nfrom torch import nn\n\nfrom src.Datasets.BatchProcessor import BatchProcessDatav2\nfrom src.Module.Utilities i..."
+    },
+    {
+      "index": 821,
+      "error": "RetryError[<Future at 0x10a6e7830 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>import random\n\nimport numpy as np\nimport pytorch_lightning as pl\nimport torch\nfrom torch import nn\n\nfrom src.Datasets.BatchProcessor import BatchProcessDatav2\nfrom src.Module.Utilities i..."
+    },
+    {
+      "index": 900,
+      "error": "RetryError[<Future at 0x10b305250 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|># Part of the implementation is borrowed and modified from stable-diffusion,\n# publicly avaialbe at https://github.com/Stability-AI/stablediffusion.\n# Copyright 2021-2022 The Alibaba Fun..."
+    },
+    {
+      "index": 1026,
+      "error": "RetryError[<Future at 0x10a67f200 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>from datetime import date\nimport pickle\nimport re\nimport torch\nimport torchaudio\n#from src.models.unet_cqt import Unet_CQT\n#from src.models.unet_stft import Unet_STFT\n#from src.models.un..."
+    },
+    {
+      "index": 1028,
+      "error": "RetryError[<Future at 0x10c1d20c0 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>from datetime import date\nimport pickle\nimport re\nimport torch\nimport torchaudio\n#from src.models.unet_cqt import Unet_CQT\n#from src.models.unet_stft import Unet_STFT\n#from src.models.un..."
+    },
+    {
+      "index": 1029,
+      "error": "RetryError[<Future at 0x109a3cc80 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>from datetime import date\nimport pickle\nimport re\nimport torch\nimport torchaudio\n#from src.models.unet_cqt import Unet_CQT\n#from src.models.unet_stft import Unet_STFT\n#from src.models.un..."
+    },
+    {
+      "index": 1091,
+      "error": "RetryError[<Future at 0x109ff8590 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>\n#Victor Mikhaylov, vmikhayl@ias.edu\n#Institute for Advanced Study, 2019-2022\n\nimport os\n#import warnings\nimport numpy as np\nimport json\nimport pickle\nimport pandas as pd\nimport time\nimp..."
+    },
+    {
+      "index": 1181,
+      "error": "RetryError[<Future at 0x109ff8590 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>#!/usr/bin/python3\n\"\"\"Defines unittests for console.py.\n\nUnittest classes:\n    TestHBNBCommand_prompting\n    TestHBNBCommand_help\n    TestHBNBCommand_exit\n    TestHBNBCommand_create\n    ..."
+    },
+    {
+      "index": 1283,
+      "error": "RetryError[<Future at 0x10b3526c0 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>\"\"\"\nThese are all the relevant parameters that are unique to the EEG analysis\npipeline.\n\"\"\"\n\nimport os \nfrom fnames import FileNames\nfrom config_common import (raw_data_dir, processed_da..."
+    },
+    {
+      "index": 1313,
+      "error": "RetryError[<Future at 0x10c24a510 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>#!/usr/bin/env python\n\nfrom collections import OrderedDict\nfrom copy import deepcopy\n\nimport glfw\nimport gym\nimport gym.spaces\nimport mujoco_py\nimport numpy as np\nfrom PIL import Image\nf..."
+    },
+    {
+      "index": 1314,
+      "error": "RetryError[<Future at 0x109f5ff80 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>#!/usr/bin/env python\n\nfrom collections import OrderedDict\nfrom copy import deepcopy\n\nimport glfw\nimport gym\nimport gym.spaces\nimport mujoco_py\nimport numpy as np\nfrom PIL import Image\nf..."
+    },
+    {
+      "index": 1567,
+      "error": "RetryError[<Future at 0x109ff85c0 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>import numpy as np\nimport torch\nfrom chronokit.exponential_smoothing.model import ETS_Model\n\n\"\"\"\nETS (Error,Trend,Seasonality) models for time series forecasting.\nAll methods have been i..."
+    },
+    {
+      "index": 1570,
+      "error": "RetryError[<Future at 0x10a732720 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>import numpy as np\nimport torch\nfrom chronokit.exponential_smoothing.model import ETS_Model\n\n\"\"\"\nETS (Error,Trend,Seasonality) models for time series forecasting.\nAll methods have been i..."
+    },
+    {
+      "index": 1664,
+      "error": "RetryError[<Future at 0x10b3526c0 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>from collections import namedtuple\nimport copy\nimport math\nimport random\nimport torch\nfrom torch import nn as nn\nfrom torch.nn import functional as F\nfrom diffusionner.modeling_albert im..."
+    },
+    {
+      "index": 2036,
+      "error": "RetryError[<Future at 0x10b38ad20 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>import argparse, glob, gzip, math, os, pickle, random, sys, threading, time\nimport util, util_explore, util_path\nimport numpy as np\nimport PIL.Image, PIL.ImageDraw, PIL.ImageTk\nimport tk..."
+    },
+    {
+      "index": 2070,
+      "error": "RetryError[<Future at 0x10b43b1d0 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>import json, multiprocessing, queue, random, sys\nimport util\n\ntry:\n    available_z3 = False\n    import z3\n    available_z3 = True\nexcept ImportError:\n    pass\n\ntry:\n    available_cvc5 = ..."
+    },
+    {
+      "index": 2071,
+      "error": "RetryError[<Future at 0x10c1fa330 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>import json, multiprocessing, queue, random, sys\nimport util\n\ntry:\n    available_z3 = False\n    import z3\n    available_z3 = True\nexcept ImportError:\n    pass\n\ntry:\n    available_cvc5 = ..."
+    },
+    {
+      "index": 2073,
+      "error": "RetryError[<Future at 0x10c226120 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>import json, multiprocessing, queue, random, sys\nimport util\n\ntry:\n    available_z3 = False\n    import z3\n    available_z3 = True\nexcept ImportError:\n    pass\n\ntry:\n    available_cvc5 = ..."
+    },
+    {
+      "index": 2165,
+      "error": "RetryError[<Future at 0x109a98890 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|># MIT License\n \n# Copyright (c) 2023 Advanced Micro Devices, Inc.\n \n# Permission is hereby granted, free of charge, to any person obtaining a copy\n# of this software and associated docum..."
+    },
+    {
+      "index": 2168,
+      "error": "RetryError[<Future at 0x109a3cc80 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|># MIT License\n \n# Copyright (c) 2023 Advanced Micro Devices, Inc.\n \n# Permission is hereby granted, free of charge, to any person obtaining a copy\n# of this software and associated docum..."
+    },
+    {
+      "index": 2169,
+      "error": "RetryError[<Future at 0x10a6c0650 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|># MIT License\n \n# Copyright (c) 2023 Advanced Micro Devices, Inc.\n \n# Permission is hereby granted, free of charge, to any person obtaining a copy\n# of this software and associated docum..."
+    },
+    {
+      "index": 2173,
+      "error": "RetryError[<Future at 0x109f5ff80 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|># MIT License\n \n# Copyright (c) 2023 Advanced Micro Devices, Inc.\n \n# Permission is hereby granted, free of charge, to any person obtaining a copy\n# of this software and associated docum..."
+    },
+    {
+      "index": 2474,
+      "error": "RetryError[<Future at 0x10c1fb140 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>import torch\nimport numpy\nimport scipy.ndimage\nimport math\nfrom . import numpy as cnumpy\nimport random\n\n\nSMALL_VALUE = 1e-8\n\n\ndef set_seed(seed):\n    \"\"\"Sets seed\"\"\"\n    if torch.cuda.is..."
+    },
+    {
+      "index": 2475,
+      "error": "RetryError[<Future at 0x10c226120 state=finished raised HTTPError>]",
+      "error_type": "RetryError",
+      "prompt": "<|fim_prefix|>import torch\nimport numpy\nimport scipy.ndimage\nimport math\nfrom . import numpy as cnumpy\nimport random\n\n\nSMALL_VALUE = 1e-8\n\n\ndef set_seed(seed):\n    \"\"\"Sets seed\"\"\"\n    if torch.cuda.is..."
+    }
+  ]
+}

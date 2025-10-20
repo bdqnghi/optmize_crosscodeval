@@ -25,6 +25,10 @@ logs/
 *.log
 nohup.out
 
+# Batch processing and error files
+*_batch_*.json
+*_error_batch_*.json
+
 # Large datasets (contains secrets, excluded from git)
 datasets/*.jsonl
 
