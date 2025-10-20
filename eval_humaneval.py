@@ -45,7 +45,8 @@ def generate_completions(
 
     for problem in tqdm(problems, desc="Generating completions"):
         task_id = problem["task_id"]
-        prompt = problem["prompt"]
+        # Match evalplus: strip prompt and add newline
+        prompt = problem["prompt"].strip() + "\n"
 
         for sample_idx in range(num_samples):
             try:
@@ -53,13 +54,11 @@ def generate_completions(
                     # Chat-based format (instruction-tuned models)
                     instruction = "Please provide a self-contained Python script that solves the following problem in a markdown code block:"
                     user_message = f"{instruction}\n```python\n{prompt.strip()}\n```"
-
-                    # Pre-fill assistant response to guide format
-                    # Note: We can't actually pre-fill with our API, so we just prompt properly
                     final_prompt = user_message
                 else:
-                    # Direct completion (base models) - just use raw prompt
-                    final_prompt = prompt.strip()
+                    # Direct completion (base models) - raw prompt with trailing newline
+                    # This matches evalplus behavior
+                    final_prompt = prompt
 
                 # Generate completion
                 outputs = client.generate(
@@ -71,14 +70,18 @@ def generate_completions(
                     top_p=top_p
                 )
 
-                raw_completion = outputs[0]
+                raw_output = outputs[0]
 
-                # Extract code from markdown if present (common with chat models)
-                completion = extract_code_from_markdown(raw_completion)
+                # For chat models: extract from markdown, then save as-is
+                # For base models: the raw output is the function body continuation
+                if use_chat_format:
+                    # Extract code from markdown blocks
+                    completion = extract_code_from_markdown(raw_output)
+                else:
+                    # Base model: raw output is the completion
+                    # Note: We save just the completion, evalplus will prepend prompt during evaluation
+                    completion = raw_output
 
-                # For direct completion models, the output is just the function body
-                # For chat models, it might include the full function
-                # We save the raw completion as-is for now
                 completions.append({
                     "task_id": task_id,
                     "completion": completion

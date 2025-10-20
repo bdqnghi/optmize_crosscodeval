@@ -7,17 +7,17 @@ Evaluation framework for HumanEval and CrossCode benchmarks.
 ### HumanEval Evaluation
 
 ```bash
-# End-to-end (generation + evaluation)
+# End-to-end (generation + sanitization + evaluation)
 MODEL=3b ./eval_humaneval.sh
 
 # With custom parameters
 MODEL=3b TEMPERATURE=0.8 MAX_TOKENS=512 ./eval_humaneval.sh
 
-# Evaluate existing results only
+# Evaluate existing results (with sanitization)
 EVAL_ONLY="results/humaneval/Qwen/Qwen2.5-Coder-3B/samples_t20_n1.jsonl" ./eval_humaneval.sh
 
 # Generation only
-python3 eval_humaneval.py --model 3b --temperature 0.2 --top-p 0.95 --generate-only
+python3 eval_humaneval.py --model 3b --temperature 0.2 --top-p 0.95
 ```
 
 ### CrossCode Evaluation (FIM)
@@ -44,8 +44,9 @@ Configure in `config.json`:
 results/
 ├── humaneval/
 │   └── {ModelName}/
-│       ├── samples_t{temp}_n{samples}.jsonl          # Generated completions
-│       └── samples_t{temp}_n{samples}_eval_results.json  # evalplus results
+│       ├── samples_t{temp}_n{samples}.jsonl               # Raw completions
+│       ├── samples_t{temp}_n{samples}-sanitized.jsonl     # Sanitized code
+│       └── samples_t{temp}_n{samples}-sanitized_eval_results.json  # Evaluation results
 └── crosscode/
     ├── python/{ModelName}/
     │   └── python_t{temp}_tok{tokens}.json
@@ -54,7 +55,8 @@ results/
 ```
 
 Example:
-- `results/humaneval/Qwen/Qwen2.5-Coder-3B/samples_t20_n1.jsonl`
+- `results/humaneval/Qwen/Qwen2.5-Coder-3B/samples_t20_n1.jsonl` (raw)
+- `results/humaneval/Qwen/Qwen2.5-Coder-3B/samples_t20_n1-sanitized.jsonl` (cleaned)
 - `results/crosscode/python/Qwen/Qwen2.5-Coder-3B/python_t20_tok128.json`
 
 ## Requirements

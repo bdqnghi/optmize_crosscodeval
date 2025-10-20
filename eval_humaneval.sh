@@ -42,16 +42,41 @@ fi
 
 # Handle eval-only mode
 if [ -n "$EVAL_ONLY" ]; then
-    echo -e "${BLUE}Evaluating existing results with evalplus...${NC}"
+    echo -e "${BLUE}Eval-Only Mode: Sanitize + Evaluate${NC}"
     echo "----------------------------------------------------------------------"
     echo "Input file: $EVAL_ONLY"
     echo ""
 
+    # Check if already sanitized
+    if [[ "$EVAL_ONLY" == *"-sanitized.jsonl" ]]; then
+        echo "File already sanitized, proceeding to evaluation..."
+        SANITIZED_INPUT="$EVAL_ONLY"
+    else
+        # Sanitize first
+        echo "Step 1: Sanitizing..."
+        docker run --rm \
+            -v $(pwd):/app \
+            ganler/evalplus:latest \
+            evalplus.sanitize --samples "/app/$EVAL_ONLY"
+
+        SANITIZED_INPUT="${EVAL_ONLY%.jsonl}-sanitized.jsonl"
+
+        if [ ! -f "$SANITIZED_INPUT" ]; then
+            echo -e "${RED}Error: Sanitized file not created${NC}"
+            exit 1
+        fi
+        echo ""
+        echo "Sanitized output: $SANITIZED_INPUT"
+        echo ""
+    fi
+
+    # Evaluate
+    echo "Step 2: Evaluating..."
     docker run --rm \
         -v $(pwd):/app \
         ganler/evalplus:latest \
         evalplus.evaluate --dataset humaneval \
-        --samples "/app/$EVAL_ONLY"
+        --samples "/app/$SANITIZED_INPUT"
 
     echo ""
     echo -e "${GREEN}✅ Evaluation completed!${NC}"
@@ -112,15 +137,36 @@ echo -e "${GREEN}✅ Generation completed!${NC}"
 echo "Output: $SAMPLES_FILE"
 echo ""
 
-# Step 2: Evaluate with evalplus
-echo -e "${BLUE}Step 2: Evaluating with evalplus...${NC}"
+# Step 2: Sanitize the generated code
+echo -e "${BLUE}Step 2: Sanitizing generated code...${NC}"
+echo "----------------------------------------------------------------------"
+
+docker run --rm \
+    -v $(pwd):/app \
+    ganler/evalplus:latest \
+    evalplus.sanitize --samples "/app/$SAMPLES_FILE"
+
+SANITIZED_FILE="${SAMPLES_FILE%.jsonl}-sanitized.jsonl"
+
+if [ ! -f "$SANITIZED_FILE" ]; then
+    echo -e "${RED}Error: Sanitized file not created${NC}"
+    exit 1
+fi
+
+echo ""
+echo -e "${GREEN}✅ Sanitization completed!${NC}"
+echo "Sanitized output: $SANITIZED_FILE"
+echo ""
+
+# Step 3: Evaluate with evalplus
+echo -e "${BLUE}Step 3: Evaluating with evalplus...${NC}"
 echo "----------------------------------------------------------------------"
 
 docker run --rm \
     -v $(pwd):/app \
     ganler/evalplus:latest \
     evalplus.evaluate --dataset humaneval \
-    --samples "/app/$SAMPLES_FILE"
+    --samples "/app/$SANITIZED_FILE"
 
 if [ $? -ne 0 ]; then
     echo -e "${RED}Error: Evaluation failed${NC}"
