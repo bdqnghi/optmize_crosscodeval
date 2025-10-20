@@ -12,7 +12,9 @@
       "Bash(git ls-tree:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(git merge:*)",
+      "Bash(MODEL=3b TEMPERATURE=0.2 TOP_P=0.95 MAX_TOKENS=512 NUM_SAMPLES=1 ./eval_humaneval.sh:*)"
     ],
     "deny": [],
     "ask": []

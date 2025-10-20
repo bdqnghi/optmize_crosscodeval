@@ -8,6 +8,7 @@ Use eval_humaneval.sh for full evaluation pipeline
 import argparse
 import json
 import os
+import re
 import sys
 from pathlib import Path
 from typing import Dict, List
@@ -23,6 +24,92 @@ from api_client import ModelAPIClient
 from eval_utils import load_config
 
 
+# Post-processing functions from humaneval/post_processing_humaneval.py
+def remove_markdown_artifacts(completion: str) -> str:
+    """Remove markdown code block markers and artifacts"""
+    # Remove ```python, ```java, etc.
+    completion = re.sub(r'```\w*\n?', '', completion)
+    completion = re.sub(r'\n?```$', '', completion)
+    completion = re.sub(r'</code>\s*$', '', completion)
+    return completion.strip()
+
+
+def fix_indentation(completion: str) -> str:
+    """
+    Fix indentation issues - the most critical fix
+    Ensures all lines have proper 4-space base indentation for function body
+    """
+    if not completion:
+        return completion
+
+    lines = completion.split('\n')
+    fixed_lines = []
+
+    for line in lines:
+        # Skip empty lines
+        if not line.strip():
+            fixed_lines.append('')
+            continue
+
+        # Get current indentation
+        current_indent = len(line) - len(line.lstrip())
+
+        # If line has no indentation, add base 4 spaces
+        if current_indent == 0:
+            fixed_lines.append('    ' + line)
+        # If line already has indentation, ensure it's at least 4 spaces
+        elif current_indent < 4:
+            # Add the missing spaces
+            fixed_lines.append('    ' + line.lstrip())
+        else:
+            # Keep existing indentation
+            fixed_lines.append(line)
+
+    return '\n'.join(fixed_lines)
+
+
+def fix_common_typos(completion: str) -> str:
+    """Fix common typos in generated code"""
+    typo_fixes = {
+        'noteote': 'note',
+        'strign': 'string',
+        'retrun': 'return',
+        'lenth': 'length',
+        'lenght': 'length',
+    }
+
+    for typo, correct in typo_fixes.items():
+        completion = completion.replace(typo, correct)
+
+    return completion
+
+
+def post_process_completion(completion: str) -> str:
+    """
+    Apply all post-processing fixes to a completion
+
+    Args:
+        completion: Raw completion string
+
+    Returns:
+        Fixed completion string
+    """
+    # Step 1: Remove markdown artifacts
+    completion = remove_markdown_artifacts(completion)
+
+    # Step 2: Fix common typos
+    completion = fix_common_typos(completion)
+
+    # Step 3: Fix indentation (MOST IMPORTANT)
+    completion = fix_indentation(completion)
+
+    # Step 4: Clean up excessive newlines
+    while '\n\n\n' in completion:
+        completion = completion.replace('\n\n\n', '\n\n')
+
+    return completion
+
+
 def generate_completions(
     client: ModelAPIClient,
     problems: List[Dict],
@@ -33,7 +120,7 @@ def generate_completions(
     use_chat_format: bool = False,
     top_p: float = None
 ) -> List[Dict]:
-    """Generate completions for HumanEval problems following evalplus structure"""
+    """Generate completions for HumanEval problems following evalplus structure with post-processing"""
 
     # Base stop tokens from evalplus
     base_stops = ["<|endoftext|>", "</s>", "\nif __name__", "\ndef main(", "\nprint("]
@@ -81,6 +168,9 @@ def generate_completions(
                     # Base model: raw output is the completion
                     # Note: We save just the completion, evalplus will prepend prompt during evaluation
                     completion = raw_output
+
+                # Always apply post-processing (indentation fixes, typo fixes, markdown cleanup)
+                completion = post_process_completion(completion)
 
                 completions.append({
                     "task_id": task_id,
@@ -247,13 +337,24 @@ def main():
     # Create output directory
     os.makedirs(args.output_dir, exist_ok=True)
 
-    # Generate output filename
+    # Generate output filename with subfolder organization
     if args.output_name:
         output_file = Path(args.output_dir) / args.output_name
     else:
         temp_str = f"t{int(args.temperature * 100):02d}"
         samples_str = f"n{args.num_samples}"
-        output_file = Path(args.output_dir) / f"samples_{temp_str}_{samples_str}.jsonl"
+        # Include top_p in filename if specified
+        if args.top_p is not None:
+            topp_str = f"_p{int(args.top_p * 100):02d}"
+        else:
+            topp_str = ""
+
+        # Create subfolder for this evaluation run
+        run_name = f"samples_{temp_str}{topp_str}_{samples_str}"
+        run_dir = Path(args.output_dir) / run_name
+        os.makedirs(run_dir, exist_ok=True)
+
+        output_file = run_dir / f"{run_name}.jsonl"
 
     # Save completions
     print(f"\nSaving {len(completions)} completions to {output_file}")

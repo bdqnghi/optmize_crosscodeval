@@ -11,6 +11,7 @@ MODEL=${MODEL:-"3b"}
 TEMPERATURE=${TEMPERATURE:-0.2}
 MAX_TOKENS=${MAX_TOKENS:-512}
 NUM_SAMPLES=${NUM_SAMPLES:-1}
+TOP_P=${TOP_P:-""}
 OUTPUT_DIR=${OUTPUT_DIR:-""}
 NO_CONTEXT=${NO_CONTEXT:-""}
 EVAL_ONLY=${EVAL_ONLY:-""}
@@ -78,6 +79,21 @@ if [ -n "$EVAL_ONLY" ]; then
         evalplus.evaluate --dataset humaneval \
         --samples "/app/$SANITIZED_INPUT"
 
+    # Post-process results
+    EVAL_RESULTS="${SANITIZED_INPUT%.jsonl}_eval_results.json"
+    if [ -f "$EVAL_RESULTS" ]; then
+        echo ""
+        echo "Step 3: Processing results..."
+
+        # Prettify the eval results JSON
+        python3 -m json.tool "$EVAL_RESULTS" > "${EVAL_RESULTS%.json}_pretty.json"
+        echo -e "${GREEN}✅ Prettified results saved${NC}"
+
+        # Extract metrics summary
+        python3 extract_metrics.py "$EVAL_RESULTS"
+        echo -e "${GREEN}✅ Metrics summary extracted${NC}"
+    fi
+
     echo ""
     echo -e "${GREEN}✅ Evaluation completed!${NC}"
     echo "======================================================================"
@@ -98,12 +114,18 @@ if [ -n "$OUTPUT_DIR" ]; then
     OUTPUT_DIR_FLAG="--output-dir $OUTPUT_DIR"
 fi
 
+TOP_P_FLAG=""
+if [ -n "$TOP_P" ]; then
+    TOP_P_FLAG="--top-p $TOP_P"
+fi
+
 python3 -u eval_humaneval.py \
     --model $MODEL \
     --temperature $TEMPERATURE \
     --max-tokens $MAX_TOKENS \
     --num-samples $NUM_SAMPLES \
     $OUTPUT_DIR_FLAG \
+    $TOP_P_FLAG \
     $CONTEXT_FLAG
 
 if [ $? -ne 0 ]; then
@@ -129,8 +151,22 @@ else:
     rm /tmp/result_dir.txt
 fi
 
-TEMP_STR=$(printf "t%02d" $((${TEMPERATURE%.*} * 10 + ${TEMPERATURE#*.})))
-SAMPLES_FILE="$RESULT_DIR/samples_${TEMP_STR}_n${NUM_SAMPLES}.jsonl"
+# Build run name for subfolder
+# Convert temperature to integer format (0.8 -> 80, 0.2 -> 20)
+TEMP_INT=$(python3 -c "print(int(float('$TEMPERATURE') * 100))")
+TEMP_STR=$(printf "t%02d" $TEMP_INT)
+
+# Add top_p to run name if specified
+if [ -n "$TOP_P" ]; then
+    TOPP_INT=$(python3 -c "print(int(float('$TOP_P') * 100))")
+    TOPP_STR=$(printf "_p%02d" $TOPP_INT)
+else
+    TOPP_STR=""
+fi
+
+RUN_NAME="samples_${TEMP_STR}${TOPP_STR}_n${NUM_SAMPLES}"
+RUN_DIR="$RESULT_DIR/$RUN_NAME"
+SAMPLES_FILE="$RUN_DIR/${RUN_NAME}.jsonl"
 
 echo ""
 echo -e "${GREEN}✅ Generation completed!${NC}"
@@ -173,6 +209,30 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+# Step 4: Post-process results
+echo ""
+echo -e "${BLUE}Step 4: Post-processing results...${NC}"
+echo "----------------------------------------------------------------------"
+
+EVAL_RESULTS="${SANITIZED_FILE%.jsonl}_eval_results.json"
+if [ -f "$EVAL_RESULTS" ]; then
+    # Prettify the eval results JSON
+    python3 -m json.tool "$EVAL_RESULTS" > "${EVAL_RESULTS%.json}_pretty.json"
+    echo -e "${GREEN}✅ Prettified results saved${NC}"
+
+    # Extract metrics summary
+    python3 extract_metrics.py "$EVAL_RESULTS"
+    echo -e "${GREEN}✅ Metrics summary extracted${NC}"
+
+    # Show summary
+    echo ""
+    cat "${EVAL_RESULTS%.json}_summary.json"
+else
+    echo -e "${YELLOW}Warning: Eval results file not found: $EVAL_RESULTS${NC}"
+fi
+
 echo ""
 echo -e "${GREEN}✅ End-to-end evaluation completed successfully!${NC}"
 echo "======================================================================"
+echo ""
+echo "All files saved in: $RUN_DIR"

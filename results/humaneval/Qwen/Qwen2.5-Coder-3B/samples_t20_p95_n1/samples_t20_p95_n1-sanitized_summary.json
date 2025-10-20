@@ -1,0 +1,17 @@
+{
+  "file": "samples_t20_p95_n1-sanitized_eval_results.json",
+  "date": "2025-10-20 20:35",
+  "hash": "fe585eb4df8c88d844eeb463ea4d0302",
+  "metrics": {
+    "base": {
+      "pass": 65,
+      "total": 164,
+      "pass@1": 39.63
+    },
+    "plus": {
+      "pass": 53,
+      "total": 164,
+      "pass@1": 32.32
+    }
+  }
+}
