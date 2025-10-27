@@ -145,13 +145,7 @@ def main():
     parser.add_argument(
         "--dataset",
         required=True,
-        choices=["crosscode_python", "crosscode_java"],
-        help="Dataset to evaluate"
-    )
-
-    parser.add_argument(
-        "--dataset-path",
-        help="Path to dataset file (auto-detected if not provided)"
+        help="Path to dataset file (.jsonl format)"
     )
 
     # Model selection
@@ -202,12 +196,19 @@ def main():
 
     args = parser.parse_args()
 
-    # Extract language from dataset name
-    language = args.dataset.replace("crosscode_", "")
+    # Extract language from dataset file path
+    dataset_name = os.path.basename(args.dataset).replace('.jsonl', '')
+    if 'python' in dataset_name.lower():
+        language = 'python'
+    elif 'java' in dataset_name.lower():
+        language = 'java'
+    else:
+        # Default to python if can't detect
+        language = 'python'
+        print(f"Warning: Could not detect language from dataset path '{args.dataset}', defaulting to python")
 
-    # Auto-detect dataset path
-    if not args.dataset_path:
-        args.dataset_path = f"datasets/{args.dataset}.jsonl"
+    # Use the provided path directly
+    args.dataset_path = args.dataset
 
     # Load configuration first to get model name
     config = load_config()

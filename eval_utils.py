@@ -89,26 +89,31 @@ def parse_fim_prompt(prompt: str) -> Tuple[str, str]:
 # ========== EXTRACTION STRATEGIES ==========
 
 def contextual_extract_python(generated: str, groundtruth: str, prefix: str, suffix: str) -> str:
-    """Python extraction strategy - extract relevant code from generated completion"""
+    """
+    Python extraction strategy - extract relevant code from generated completion
+    """
     if not generated:
         return ""
 
     generated = generated.strip()
-    gt_len = len(groundtruth)
 
+    # Analyze context to determine extraction strategy
     prefix_tail = prefix[-100:] if len(prefix) > 100 else prefix
     suffix_head = suffix[:100] if len(suffix) > 100 else suffix
 
+    # Check if we're inside brackets/parens
     opens_context = bool(re.search(r'[\(\[\{]\s*$', prefix_tail))
     closes_context = bool(re.search(r'^\s*[\)\]\}]', suffix_head))
 
+    # Set reasonable max length based on context
     if opens_context and closes_context:
-        max_len = min(gt_len * 1.5, 120)
+        max_len = 120  # Inside brackets - likely short expression
     else:
-        max_len = min(gt_len * 1.8, 150)
+        max_len = 200  # Regular code - allow more length
 
     generated = generated[:int(max_len)]
 
+    # Find natural stopping points (statement ends)
     statement_ends = [r'\n\s*\n', r'[;}\]]\n', r'"\s*\n', r"'\s*\n"]
     min_end = len(generated)
     for pattern in statement_ends:
@@ -119,11 +124,7 @@ def contextual_extract_python(generated: str, groundtruth: str, prefix: str, suf
     if min_end < len(generated):
         generated = generated[:min_end]
 
-    if '\n' not in groundtruth and '\n' in generated:
-        first_line = generated.split('\n')[0]
-        if first_line.strip():
-            generated = first_line
-
+    # Stop at function/class definitions (new scope boundaries)
     def_patterns = [r'\ndef ', r'\nclass ', r'\nif __name__']
     for pattern in def_patterns:
         idx = generated.find(pattern)
@@ -134,26 +135,25 @@ def contextual_extract_python(generated: str, groundtruth: str, prefix: str, suf
 
 
 def contextual_extract_java(generated: str, groundtruth: str, prefix: str, suffix: str) -> str:
-    """Java extraction strategy - extract relevant code from generated completion"""
+    """
+    Java extraction strategy - extract relevant code from generated completion
+    """
     if not generated:
         return ""
 
     generated = generated.strip()
-    gt_len = len(groundtruth)
 
-    if gt_len < 50:
-        max_len = min(gt_len * 2, 100)
-        generated = generated[:max_len]
-    elif gt_len < 200:
-        max_len = int(gt_len * 1.5)
-        generated = generated[:max_len]
+    # Set reasonable max length (Java is verbose)
+    max_len = 250
+    generated = generated[:max_len]
 
+    # Find natural stopping points (Java statement ends)
     java_statement_ends = [
-        r';(?:\s*\n)',
-        r'\}(?:\s*\n)',
-        r'\n\s*\n',
-        r'\n\s*//',
-        r'\n\s*/\*',
+        r';(?:\s*\n)',      # Semicolon with newline
+        r'\}(?:\s*\n)',     # Closing brace with newline
+        r'\n\s*\n',         # Empty line
+        r'\n\s*//',         # Comment start
+        r'\n\s*/\*',        # Block comment start
     ]
 
     min_end = len(generated)
