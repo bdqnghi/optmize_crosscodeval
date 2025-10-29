@@ -179,11 +179,6 @@ def contextual_extract_java(generated: str, groundtruth: str, prefix: str, suffi
         if idx != -1 and idx > 0:
             generated = generated[:idx]
 
-    if '\n' not in groundtruth and '\n' in generated:
-        first_line = generated.split('\n')[0]
-        if first_line.strip():
-            generated = first_line
-
     open_parens = generated.count('(')
     close_parens = generated.count(')')
     open_braces = generated.count('{')
